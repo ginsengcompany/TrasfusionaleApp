@@ -24,13 +24,13 @@
                 Text="Nome del paziente"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
-                Grid.Column="0" Grid.Row="1"/>
+                Grid.Column="1" Grid.Row="0"/>
 
             <Label
                 Text="Cognome del paziente"
                 VerticalOptions="Center"
                 HorizontalOptions="Start"
-                Grid.Column="0" Grid.Row="2"/>
+                Grid.Column="0" Grid.Row="1"/>
 
         </Grid>
     </ContentPage.Content>

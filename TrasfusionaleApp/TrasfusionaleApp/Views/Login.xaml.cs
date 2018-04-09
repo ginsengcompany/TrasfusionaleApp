@@ -16,10 +16,12 @@ namespace TrasfusionaleApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Login : ContentPage
 	{
-        Operatore operatore = new Operatore();
-		public Login ()
+        private Operatore operatore = new Operatore();
+	    private bool medico = false;
+		public Login (bool medico)
 		{
 			InitializeComponent ();
+		    this.medico = medico;
 		}
 
 	    private async void AvvioLogin(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace TrasfusionaleApp.Views
             if (esito)
             {
                 await DisplayAlert("Login", "Login effettuata con successo", "OK");
-                await Navigation.PushAsync(new IndividuaPazienteView());
+                await Navigation.PushAsync(new MainPage());
             }
             else
                 await DisplayAlert("Login", "Accesso negato", "OK");

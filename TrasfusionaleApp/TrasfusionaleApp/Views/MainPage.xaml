@@ -19,7 +19,7 @@
 
                 <Grid Grid.Column="0" Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -36,7 +36,7 @@
                 
                 <Grid Grid.Column="0" Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -52,14 +52,19 @@
                 </Grid>
 
                 <Grid Grid.Column="1" Grid.Row="0">
+                  
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Source="sacca.png" Grid.Column="0" Grid.Row="0"/>
+                    <Image Source="sacca.png" Grid.Column="0" Grid.Row="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label
                     Text="Trasfusionale"
                     Grid.Column="0" Grid.Row="1"

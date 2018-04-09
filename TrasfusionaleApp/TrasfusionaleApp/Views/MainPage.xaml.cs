@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrasfusionaleApp.Views;
 using Xamarin.Forms;
 
 namespace TrasfusionaleApp
@@ -13,5 +14,10 @@ namespace TrasfusionaleApp
 		{
 			InitializeComponent();
 		}
+
+	    private async void VaiInPaginaTrasfusionale(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new Login(true));
+	    }
 	}
 }
