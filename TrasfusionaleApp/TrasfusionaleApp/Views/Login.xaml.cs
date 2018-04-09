@@ -26,10 +26,15 @@ namespace TrasfusionaleApp.Views
 	    {
 	        operatore.uid = entryUsername.Text;
 	        operatore.password = entryPassword.Text;
-            operatore.Login();
-            await  Navigation.PushAsync(new IndividuaPazienteView());
-          
-	    }
+            var esito = await operatore.Login();
+            if (esito)
+            {
+                await DisplayAlert("Login", "Login effettuata con successo", "OK");
+                await Navigation.PushAsync(new IndividuaPazienteView());
+            }
+            else
+                await DisplayAlert("Login", "Accesso negato", "OK");
+        }
 
 	    public async void scan()
 	    {
