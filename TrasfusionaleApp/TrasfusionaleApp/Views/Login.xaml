@@ -21,13 +21,22 @@
                     <!-- <Image Source="user_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" HeightRequest="50"/> -->
                     <Entry
                             Grid.Column="1" Grid.Row="0"
+                        x:Name="entryUsername"
                             Placeholder="Inserisci UID"     
                             WidthRequest="250"
                             VerticalOptions="Center"/>
+                    <Image 
+                        Grid.Column="2" Grid.Row="0"
+                        Source="scan.png" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AvviaScansione"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
 
                     <!-- <Image Source="pass_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="1" HeightRequest="50"/> -->
                     <Entry
                             Placeholder="Inserisci Password" 
+                        x:Name="entryPassword"
                             Grid.Column="1" Grid.Row="1"
                             VerticalOptions="Center"
                             WidthRequest="250"/>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrasfusionaleApp.Model;
+using TrasfusionaleApp.Service;
 using ZXing;
 using ZXing.Mobile;
 using ZXing.Net.Mobile.Forms;
@@ -14,6 +16,7 @@ namespace TrasfusionaleApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Login : ContentPage
 	{
+        Operatore operatore = new Operatore();
 		public Login ()
 		{
 			InitializeComponent ();
@@ -21,7 +24,10 @@ namespace TrasfusionaleApp.Views
 
 	    private async void AvvioLogin(object sender, EventArgs e)
 	    {
-	        await  Navigation.PushAsync(new IndividuaPazienteView());
+	        operatore.uid = entryUsername.Text;
+	        operatore.password = entryPassword.Text;
+            operatore.Login();
+            await  Navigation.PushAsync(new IndividuaPazienteView());
           
 	    }
 
@@ -36,7 +42,7 @@ namespace TrasfusionaleApp.Views
 	            // Pop the page and show the result
 	            Device.BeginInvokeOnMainThread(() => {
 	                Navigation.PopAsync();
-	                DisplayAlert("Scanned Barcode", result.Text, "OK");
+	                entryUsername.Text = result.Text;
 	            });
 	        };
 
@@ -45,5 +51,9 @@ namespace TrasfusionaleApp.Views
 
         }
 
-    }
+	    private void AvviaScansione(object sender, EventArgs e)
+	    {
+	         scan();
+	    }
+	}
 }
