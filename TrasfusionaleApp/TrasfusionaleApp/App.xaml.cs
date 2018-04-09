@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TrasfusionaleApp.Views;
 using Xamarin.Forms;
 
 namespace TrasfusionaleApp
@@ -13,7 +13,7 @@ namespace TrasfusionaleApp
 		{
 			InitializeComponent();
 
-			MainPage = new TrasfusionaleApp.MainPage();
+            MainPage = new IndividuaPazienteView();
 		}
 
 		protected override void OnStart ()

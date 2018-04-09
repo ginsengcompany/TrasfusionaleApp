@@ -4,8 +4,40 @@
              xmlns:local="clr-namespace:TrasfusionaleApp"
              x:Class="TrasfusionaleApp.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout Orientation="Vertical" Margin="10" Padding="0,0,0,20">
+        <StackLayout Orientation="Vertical" >
+
+            <Grid HorizontalOptions="Center" Margin="0,40,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button
+                    Text="Individua paziente"
+                    Grid.Column="1" Grid.Row="0"
+                    VerticalOptions="Center"
+                    WidthRequest="250" />
+
+                <Button
+                    Text="Pre-trasfusionale"
+                    Grid.Column="1" Grid.Row="1"
+                    VerticalOptions="Center"
+                    WidthRequest="250"/>
+
+                <Button
+                    Text="Trasfusionale"
+                    Grid.Column="1" Grid.Row="2"
+                    VerticalOptions="Center"
+                    WidthRequest="250"/>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
 
 </ContentPage>

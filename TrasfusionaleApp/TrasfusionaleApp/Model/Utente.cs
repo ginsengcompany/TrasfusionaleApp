@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrasfusionaleApp.ModelView
+namespace TrasfusionaleApp.Model
 {
-    public class LoginModelView
+    public class Utente
     {
 
     }
