@@ -126,6 +126,9 @@
     <PackageReference Include="ZXing.Net.Mobile">
       <Version>2.4.1</Version>
     </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -138,16 +141,7 @@
     <ImageAsset Include="Assets.xcassets\Icone dell'app.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sacca.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sangue.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\posizione.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Immagini di avvio.launchimage\Contents.json">
+    <ImageAsset Include="Assets.xcassets\scan.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\posizione.imageset\Icon.png">
@@ -159,6 +153,9 @@
     <ImageAsset Include="Assets.xcassets\posizione.imageset\Icon@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sacca.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sacca.imageset\Icon.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -168,6 +165,15 @@
     <ImageAsset Include="Assets.xcassets\sacca.imageset\Icon@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sangue.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\posizione.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Immagini di avvio.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sangue.imageset\Icon.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -175,6 +181,15 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sangue.imageset\Icon@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\scan.imageset\Icon.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\scan.imageset\Icon@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\scan.imageset\Icon@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace TrasfusionaleApp
 		{
 			InitializeComponent();
 
-            MainPage = new IndividuaPazienteView();
+            MainPage = new NavigationPage(new Login());
 		}
 
 		protected override void OnStart ()
