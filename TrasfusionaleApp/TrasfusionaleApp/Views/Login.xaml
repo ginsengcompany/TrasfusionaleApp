@@ -36,6 +36,7 @@
                         Grid.Column="1" Grid.Row="2"
                         VerticalOptions="Center"
                         WidthRequest="250"
+                        Clicked="AvvioLogin"
                         />
                 </Grid>
             </StackLayout>
