@@ -7,35 +7,66 @@
     <StackLayout Orientation="Vertical" Margin="10" Padding="0,0,0,20">
         <StackLayout Orientation="Vertical" >
 
-            <Grid HorizontalOptions="Center" Margin="0,40,0,0">
+            <Grid Margin="0,10,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
-                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Button
-                    Text="Individua paziente"
-                    Grid.Column="1" Grid.Row="0"
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="posizione.png" Grid.Column="0" Grid.Row="0"/>
+                    <Label
+                    Text="Localizza  paziente"
+                    Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
                     WidthRequest="250" />
-
-                <Button
-                    Text="Pre-trasfusionale"
-                    Grid.Column="1" Grid.Row="1"
+                </Grid>
+                
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="sangue.png" Grid.Column="0" Grid.Row="0"/>
+                    <Label
+                    Text="Pre-trasfusionalee"
+                    Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
-                    WidthRequest="250"/>
+                    HorizontalTextAlignment="Center"
+                    WidthRequest="250" />
+                </Grid>
 
-                <Button
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="sacca.png" Grid.Column="0" Grid.Row="0"/>
+                    <Label
                     Text="Trasfusionale"
-                    Grid.Column="1" Grid.Row="2"
+                    Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
-                    WidthRequest="250"/>
+                    HorizontalTextAlignment="Center"
+                    WidthRequest="250" />
+                </Grid>
             </Grid>
         </StackLayout>
     </StackLayout>
