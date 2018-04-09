@@ -21,7 +21,7 @@
                     <!-- <Image Source="user_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" HeightRequest="50"/> -->
                     <Entry
                             Grid.Column="1" Grid.Row="0"
-                            Placeholder="Inserisci Username"     
+                            Placeholder="Inserisci UID"     
                             WidthRequest="250"
                             VerticalOptions="Center"/>
 
