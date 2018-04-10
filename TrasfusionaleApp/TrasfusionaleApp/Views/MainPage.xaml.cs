@@ -17,7 +17,7 @@ namespace TrasfusionaleApp
 
 	    private async void VaiInPaginaTrasfusionale(object sender, EventArgs e)
 	    {
-	        await Navigation.PushAsync(new Login(true));
+	        await Navigation.PushAsync(new LoginTrasfusionale());
 	    }
 	}
 }

@@ -17,11 +17,9 @@ namespace TrasfusionaleApp.Views
 	public partial class Login : ContentPage
 	{
         private Operatore operatore = new Operatore();
-	    private bool medico = false;
-		public Login (bool medico)
+		public Login ()
 		{
 			InitializeComponent ();
-		    this.medico = medico;
 		}
 
 	    private async void AvvioLogin(object sender, EventArgs e)
@@ -31,7 +29,7 @@ namespace TrasfusionaleApp.Views
             var esito = await operatore.Login();
             if (esito)
             {
-                await DisplayAlert("Login", "Login effettuata con successo", "OK");
+                await DisplayAlert("Login", "Salve " + operatore.nome + " " + operatore.cognome, "OK");
                 await Navigation.PushAsync(new MainPage());
             }
             else
