@@ -25,9 +25,13 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Source="posizione.png" Grid.Column="0" Grid.Row="0"/>
+                    <Image Source="posizione.png" Grid.Column="0" Grid.Row="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label
-                    Text="Localizza  paziente"
+                    Text="Localizza paziente"
                     Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
                     HorizontalTextAlignment="Center"

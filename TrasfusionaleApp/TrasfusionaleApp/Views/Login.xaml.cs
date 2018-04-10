@@ -30,7 +30,7 @@ namespace TrasfusionaleApp.Views
             if (esito)
             {
                 await DisplayAlert("Login", "Salve " + operatore.nome + " " + operatore.cognome, "OK");
-                await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new MainPage(operatore));
             }
             else
                 await DisplayAlert("Login", "Accesso negato", "OK");
@@ -50,10 +50,8 @@ namespace TrasfusionaleApp.Views
 	                entryUsername.Text = result.Text;
 	            });
 	        };
-
 	        // Navigate to our scanner page
 	        await Navigation.PushAsync(scanPage);
-
         }
 
 	    private void AvviaScansione(object sender, EventArgs e)
