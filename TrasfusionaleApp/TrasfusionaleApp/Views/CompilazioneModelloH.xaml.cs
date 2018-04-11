@@ -22,11 +22,12 @@ namespace TrasfusionaleApp.Views
 	    private void InvioDati(object sender, EventArgs e)
 	    {
 	        if (entryConfermaPassword.Text == operatore.password)
-                if(operatore.codice_operatore!=1)
+	        {
+	            if (operatore.codice_operatore != 1)
 	                Navigation.PushAsync(new LoginTrasfusionale(operatore));
-                //else
-                
-	        else
+	            //else
+            }
+            else
 	        {
 	            DisplayAlert("Attenzione", "password non corretta", "ok");
 	        }
