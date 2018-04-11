@@ -92,6 +92,7 @@ namespace TrasfusionaleApp.Views
                         labelNomePaziente.Text = paziente.nome;
                         labelRepartoPaziente.Text = paziente.reparto;
                         labelLettoPaziente.Text = paziente.letto.ToString();
+                        labelIdPaziente.Text = paziente.uid;
                     }
                     else
                     {
@@ -100,6 +101,7 @@ namespace TrasfusionaleApp.Views
                         labelNomePaziente.Text = "";
                         labelRepartoPaziente.Text = "";
                         labelLettoPaziente.Text = "";
+                        labelIdPaziente.Text = "";
                     }
                 }
                 else
@@ -109,6 +111,7 @@ namespace TrasfusionaleApp.Views
                     labelNomePaziente.Text = "";
                     labelRepartoPaziente.Text = "";
                     labelLettoPaziente.Text = "";
+                    labelIdPaziente.Text = "";
                 }
             }
         }
