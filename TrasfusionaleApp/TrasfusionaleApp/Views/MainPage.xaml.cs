@@ -28,5 +28,10 @@ namespace TrasfusionaleApp
 	    {
 	        await Navigation.PushAsync(new LoginTrasfusionale());
 	    }
-	}
+
+	    private async void vaiPaginaPretrasfusionale(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new PreTrasfusionale(operatore));
+	    }
+    }
 }
