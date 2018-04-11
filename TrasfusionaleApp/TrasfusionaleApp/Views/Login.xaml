@@ -33,7 +33,7 @@
                         Grid.Row="0"
                         Source="scan.png">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="AvviaScansione"/>
+                            <TapGestureRecognizer Tapped="scan"/>
                         </Image.GestureRecognizers>
                     </Image>
 
