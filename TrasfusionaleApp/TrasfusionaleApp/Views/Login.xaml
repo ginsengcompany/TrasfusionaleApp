@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrasfusionaleApp.Views.Login">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Margin="10" Padding="0,0,0,20">
+        <StackLayout Orientation="Vertical"
+                     Margin="10"
+                     Padding="0,0,0,20">
             <StackLayout Orientation="Vertical" >
 
+                <Image Source="logoCardarelli.jpg" HorizontalOptions="Center" HeightRequest="120"></Image>
                 <Grid HorizontalOptions="Center" Margin="0,40,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.3*"></ColumnDefinition>
@@ -26,10 +29,11 @@
                             WidthRequest="250"
                             VerticalOptions="Center"/>
                     <Image 
-                        Grid.Column="2" Grid.Row="0"
-                        Source="scan.png" >
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Source="scan.png">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="AvviaScansione"></TapGestureRecognizer>
+                            <TapGestureRecognizer Tapped="AvviaScansione"/>
                         </Image.GestureRecognizers>
                     </Image>
 
@@ -40,6 +44,9 @@
                             Grid.Column="1" Grid.Row="1"
                             VerticalOptions="Center"
                             WidthRequest="250"/>
+                    <Image Source="eye.png" 
+                           Grid.Column="2" 
+                           Grid.Row="1"/>
                     <Button
                         Text="Login"
                         Grid.Column="1" Grid.Row="2"

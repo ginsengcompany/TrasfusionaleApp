@@ -217,4 +217,13 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\provettaIcona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bloodIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\locIcon.png" />
+  </ItemGroup>
 </Project>
