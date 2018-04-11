@@ -42,7 +42,7 @@
                     Grid.Column="1" Grid.Row="0"
                     Source="scan.png" Aspect="Fill" >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="scanProvetta"></TapGestureRecognizer>
+                            <TapGestureRecognizer Tapped="scan"></TapGestureRecognizer>
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
