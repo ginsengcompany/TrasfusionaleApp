@@ -9,10 +9,8 @@
         <Grid 
                   VerticalOptions="CenterAndExpand" 
                   HorizontalOptions="CenterAndExpand"
-                  BackgroundColor="Black" 
                   Padding="2" 
-                  RowSpacing="1"
-                  ColumnSpacing="1">
+            >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
@@ -32,7 +30,7 @@
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Column="0"
                                  Grid.Row="0" 
-                                 BackgroundColor="White">
+                                >
                     <Image Source="locIcon.png"  
                                HeightRequest="100">
                         <Image.GestureRecognizers>
@@ -56,10 +54,10 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackLayout  Grid.Column="0" Grid.Row="0" BackgroundColor="White">
+                <StackLayout  Grid.Column="0" Grid.Row="0" >
                     <Image Source="provettaIcona.png" HeightRequest="100" >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"></TapGestureRecognizer>
+                            <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Label
@@ -77,13 +75,13 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackLayout BackgroundColor="White" 
+                <StackLayout 
                                  Grid.Column="0" 
                                  Grid.Row="0" >
                     <Image Source="bloodIcon.png" 
                                HeightRequest="100">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"></TapGestureRecognizer>
+                            <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Label
