@@ -45,7 +45,7 @@ namespace TrasfusionaleApp.Views
             if (esito)
             {
                 await DisplayAlert("Login", "Salve " + medico.nome + " " + medico.cognome, "OK");
-                //await Navigation.PushAsync(new MainPage(operatore));
+                await Navigation.PushAsync(new CompilazioneModelloH(medico));
                 entryUsernameMedico.Text = "";
                 entryPasswordMedico.Text = "";
             }

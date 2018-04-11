@@ -84,8 +84,8 @@
 
 
             </Grid>
-            <Entry Placeholder="Conferma password" HorizontalOptions="CenterAndExpand"></Entry>
-            <Button Text="conferma" Clicked="InvioDati" IsEnabled="False"></Button>
+            <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand"></Entry>
+            <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
