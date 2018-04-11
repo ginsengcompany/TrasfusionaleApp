@@ -5,11 +5,13 @@
              x:Class="TrasfusionaleApp.MainPage">
 
     <StackLayout Orientation="Vertical" Margin="10" >
+        <Image Source="logoCardarelli.jpg" HeightRequest="200" HorizontalOptions="CenterAndExpand"></Image>
 
         <Grid 
                   VerticalOptions="CenterAndExpand" 
                   HorizontalOptions="CenterAndExpand"
                   Padding="2" 
+            RowSpacing="10"
             >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -30,9 +32,10 @@
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Column="0"
                                  Grid.Row="0" 
+                             Orientation="Horizontal"
                                 >
-                    <Image Source="locIcon.png"  
-                               HeightRequest="100">
+                    <Image Source="geo.png"  
+                               HeightRequest="150">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
                         </Image.GestureRecognizers>
@@ -40,6 +43,8 @@
                     <Label
                             Text="Localizza paziente"
                             HorizontalTextAlignment="Center"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
                             FontSize="Medium"
                             WidthRequest="250" />
                 </StackLayout>
@@ -54,8 +59,8 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackLayout  Grid.Column="0" Grid.Row="0" >
-                    <Image Source="provettaIcona.png" HeightRequest="100" >
+                <StackLayout  Grid.Column="0" Grid.Row="0" Orientation="Horizontal" >
+                    <Image Source="provetta.png" HeightRequest="150" >
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"/>
                         </Image.GestureRecognizers>
@@ -63,6 +68,8 @@
                     <Label
                             Text="Pre-trasfusionale"
                             FontSize="Medium"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
                             HorizontalTextAlignment="Center"
                             WidthRequest="250" />
                 </StackLayout>
@@ -77,9 +84,10 @@
                 </Grid.RowDefinitions>
                 <StackLayout 
                                  Grid.Column="0" 
-                                 Grid.Row="0" >
-                    <Image Source="bloodIcon.png" 
-                               HeightRequest="100">
+                                 Grid.Row="0" 
+                    Orientation="Horizontal">
+                    <Image Source="sacca.png" 
+                               HeightRequest="150">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"/>
                         </Image.GestureRecognizers>
@@ -88,6 +96,8 @@
                             Text="Trasfusionale"
                             FontSize="Medium"
                             HorizontalTextAlignment="Center"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
                             WidthRequest="250" />
                 </StackLayout>
 
