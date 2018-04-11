@@ -30,7 +30,7 @@
 
                 <Button
                     Text="Scan provetta"
-                    Clicked="btnScanProvetta"
+                    Clicked="scanProvetta"
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"/>
@@ -98,9 +98,8 @@
                     Grid.Column="1" Grid.Row="3"/>
 
                 <Button
-                    Clicked="btnScanPaziente"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
+                    Text="Scan paziente"
+                    Clicked="scanPaziente"
                     Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
 
             </Grid>

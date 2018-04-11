@@ -58,7 +58,7 @@ namespace TrasfusionaleApp.Views
             };
 		}
 
-        private async Task scan()
+        private async void scan(object sender, EventArgs e)
         {
             var scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) => {
@@ -67,18 +67,19 @@ namespace TrasfusionaleApp.Views
                 // Pop the page and show the result
                 Device.BeginInvokeOnMainThread(() => {
                     Navigation.PopAsync();
+                    provetta = new Provetta();
                     provetta.uid = result.Text;
                     entryCodiceProvetta.Text = result.Text;
                     scanEseguita = true;
+                    controlloscanProvetta();
                 });
             };
             // Navigate to our scanner page
             await Navigation.PushAsync(scanPage);
         }
 
-        private async void scanProvetta(object sender, EventArgs e)
+        private async void controlloscanProvetta()
         {
-            await scan();
             if (scanEseguita)
             {
                 scanEseguita = false;

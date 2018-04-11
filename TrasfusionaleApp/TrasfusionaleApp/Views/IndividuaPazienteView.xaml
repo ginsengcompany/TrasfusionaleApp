@@ -14,24 +14,19 @@
                     <RowDefinition Height="*"></RowDefinition> <!-- 0 ENTRY-->
                     <RowDefinition Height="0.2*"></RowDefinition> <!-- 1 S-->
                     <RowDefinition Height="*"></RowDefinition> <!-- 2 NOME-->
-                    <RowDefinition Height="0.1*"></RowDefinition> <!-- 3 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 4 NOME-->
-                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 5 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 3 NOME-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 4 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 5 COGNOME-->
                     <RowDefinition Height="*"></RowDefinition> <!-- 6 COGNOME-->
-                    <RowDefinition Height="0.1*"></RowDefinition> <!-- 7 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 8 COGNOME-->
-                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 9 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 10 REPARTO-->
-                    <RowDefinition Height="0.1*"></RowDefinition> <!-- 11 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 12 REPARTO-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 7 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 8 REPARTO-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 9 REPARTO-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 10 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 11 LETTO-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 12 LETTO-->
                     <RowDefinition Height="0.2*"></RowDefinition> <!-- 13 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 14 LETTO-->
-                    <RowDefinition Height="0.1*"></RowDefinition> <!-- 15 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 16 LETTO-->
-                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 17 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 18 ID-->
-                    <RowDefinition Height="0.1*"></RowDefinition> <!-- 19 S-->
-                    <RowDefinition Height="*"></RowDefinition> <!-- 20 ID-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 14 ID-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 15 ID-->
                 </Grid.RowDefinitions>
                 <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="0" Padding="3">
                     <Entry
@@ -42,12 +37,12 @@
                     HorizontalOptions="CenterAndExpand"
                     WidthRequest="250"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0" Padding="3">
+                <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0">
                     <Image 
                     Grid.Column="1" Grid.Row="0"
-                    Source="scan.png" >
+                    Source="scan.png" Aspect="Fill" >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="scanProvetta"></TapGestureRecognizer>
+                            <TapGestureRecognizer Tapped="scan"></TapGestureRecognizer>
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
@@ -57,54 +52,50 @@
                 <StackLayout Grid.Column="0" BackgroundColor="White" Grid.Row="2" Grid.ColumnSpan="2">
                     <Label
                     Text="Nome del paziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     TextColor="Black"
                     FontAttributes="Bold"
                     FontSize="Medium" />
                 </StackLayout>
 
-                <StackLayout BackgroundColor="Black" Grid.ColumnSpan="2"    Grid.Row="3"/>
-
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
                     <Label
                     x:Name="labelNomePaziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Large"
                     TextColor="#5195dd"
                     />
                 </StackLayout>
 
-                <StackLayout BackgroundColor="#5195dd" Grid.ColumnSpan="2"  Grid.Row="5"/>
+                <StackLayout BackgroundColor="#5195dd" Grid.ColumnSpan="2"  Grid.Row="4"/>
 
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
                     <Label
                     Text="Cognome del paziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Medium"
                     TextColor="Black"
                     FontAttributes="Bold"/>
                 </StackLayout>
 
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="Black"  Grid.Row="7"/>
-
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
                     <Label
                     x:Name="labelCognomePaziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Large"
                     TextColor="#5195dd"/>
                 </StackLayout>
                 
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195dd"  Grid.Row="9"/>
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195dd"  Grid.Row="7"/>
 
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">
                     <Label
                     Text="Reparto"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Medium"
                     TextColor="Black"
@@ -112,62 +103,57 @@
                         />
                 </StackLayout>
 
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="Black"  Grid.Row="11"/>
 
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2">
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">
                     <Label
                     x:Name="labelRepartoPaziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Large"
                     TextColor="#5195dd"
                     />
+                </StackLayout>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195dd"  Grid.Row="10"/>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2">
+                    <Label
+                    Text="Letto"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    />
+                </StackLayout>
+                
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelLettoPaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5195dd"
+                        />
                 </StackLayout>
 
                 <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195dd"  Grid.Row="13"/>
 
                 <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="2">
                     <Label
-                    Text="Letto"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    FontSize="Medium"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    />
-                </StackLayout>
-
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="Black"   Grid.Row="15"/>
-
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="16" Grid.ColumnSpan="2">
-                    <Label
-                    x:Name="labelLettoPaziente"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    FontSize="Large"
-                    TextColor="#5195dd"
-                        />
-                </StackLayout>
-
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195dd"  Grid.Row="17"/>
-
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="18" Grid.ColumnSpan="2">
-                    <Label
                     Text="ID paziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Medium"
                     TextColor="Black"
                     FontAttributes="Bold"
                     />
                 </StackLayout>
-
-                <StackLayout Grid.ColumnSpan="2" BackgroundColor="Black"   Grid.Row="19"/>
-
-                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="20" Grid.ColumnSpan="2">
+              
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="15" Grid.ColumnSpan="2">
                     <Label
                     x:Name="labelIdPaziente"
-                    VerticalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     FontSize="Large"
                     TextColor="#5195dd"
