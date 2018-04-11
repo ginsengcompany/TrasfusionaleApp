@@ -25,7 +25,7 @@ namespace TrasfusionaleApp.Views
             btnPrelievo.IsEnabled = false;
 		}
 
-        private async Task scanPaziente()
+        private async void scanPaziente(object sender, EventArgs e)
         {
             var scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) => {
@@ -38,13 +38,14 @@ namespace TrasfusionaleApp.Views
                     paziente = new Paziente();
                     paziente.uid = result.Text;
                     scanPazienteEseguita = true;
+                    controllaScanPaziente();
                 });
             };
             // Navigate to our scanner page
             await Navigation.PushAsync(scanPage);
         }
 
-        private async Task scanProvetta()
+        private async void scanProvetta(object sender, EventArgs e)
         {
             var scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) => {
@@ -56,26 +57,74 @@ namespace TrasfusionaleApp.Views
                     provetta = new Provetta();
                     provetta.uid = result.Text;
                     scanProvettaEseguita = true;
+                    controllaScanProvetta();
                 });
             };
             // Navigate to our scanner page
             await Navigation.PushAsync(scanPage);
         }
 
-        private async void btnScanPaziente(object sender, EventArgs e)
+        private async void controllaScanProvetta()
         {
-            await scanPaziente();
+            if (scanProvettaEseguita)
+            {
+                scanProvettaEseguita = false;
+                if (await provetta.InviaProvetta())
+                {
+                    labelProvetta.Text = provetta.uid;
+                    provettaScan = true;
+                    if (pazienteScan && provettaScan)
+                    {
+                        if (provetta.uidPaziente == paziente.uid)
+                        {
+                            await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
+                            btnPrelievo.IsEnabled = true;
+                        }
+                        else
+                        {
+                            await DisplayAlert("Pre-Trasfusionale", "Associazione non corretta", "OK");
+                            btnPrelievo.IsEnabled = false;
+                        }
+                    }
+                    else
+                        btnPrelievo.IsEnabled = false;
+                }
+                else
+                {
+                    labelProvetta.Text = "";
+                    provettaScan = false;
+                    btnPrelievo.IsEnabled = pazienteScan && provettaScan;
+                }
+            }
+        }
+
+        private async void controllaScanPaziente()
+        {
             if (scanPazienteEseguita)
             {
                 scanPazienteEseguita = false;
-                if(await paziente.prelevaDatiPaziente())
+                if (await paziente.prelevaDatiPaziente())
                 {
                     NomePaziente.Text = paziente.nome;
                     CognomePaziente.Text = paziente.cognome;
                     RepartoPaziente.Text = paziente.reparto;
                     LettoPaziente.Text = paziente.letto.ToString();
                     pazienteScan = true;
-                    btnPrelievo.IsEnabled = pazienteScan && provettaScan;
+                    if (pazienteScan && provettaScan)
+                    {
+                        if (provetta.uidPaziente == paziente.uid)
+                        {
+                            await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
+                            btnPrelievo.IsEnabled = true;
+                        }
+                        else
+                        {
+                            await DisplayAlert("Pre-Trasfusionale", "Associazione non corretta", "OK");
+                            btnPrelievo.IsEnabled = false;
+                        }
+                    }
+                    else
+                        btnPrelievo.IsEnabled = false;
                 }
                 else
                 {
@@ -84,27 +133,6 @@ namespace TrasfusionaleApp.Views
                     RepartoPaziente.Text = "";
                     LettoPaziente.Text = "";
                     pazienteScan = false;
-                    btnPrelievo.IsEnabled = pazienteScan && provettaScan;
-                }
-            }
-        }
-
-        private async void btnScanProvetta(object sender, EventArgs e)
-        {
-            await scanProvetta();
-            if (scanProvettaEseguita)
-            {
-                scanProvettaEseguita = false;
-                if (await provetta.InviaProvetta())
-                {
-                    labelProvetta.Text = provetta.uid;
-                    provettaScan = true;
-                    btnPrelievo.IsEnabled = pazienteScan && provettaScan;
-                }
-                else
-                {
-                    labelProvetta.Text = "";
-                    provettaScan = false;
                     btnPrelievo.IsEnabled = pazienteScan && provettaScan;
                 }
             }
