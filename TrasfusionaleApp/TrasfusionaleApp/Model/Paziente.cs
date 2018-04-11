@@ -11,6 +11,8 @@ namespace TrasfusionaleApp.Model
         public string cognome { get; set; }
         public string gruppo { get; set; }
         public string rh { get; set; }
+        public string reparto { get; set; }
+        public int letto { get; set; }
         public string dataAssegnazioneTrasfusione { get; set; }
     }
 }
