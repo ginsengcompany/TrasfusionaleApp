@@ -4,7 +4,7 @@
              x:Class="TrasfusionaleApp.Views.PreTrasfusionale">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Grid>
+            <Grid Padding="10,5,5,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -12,102 +12,167 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                 </Grid.RowDefinitions>
 
+                <Button
+                    Margin="5"
+                    TextColor="White"
+                    Text="Scan provetta"
+                    Clicked="scanProvetta"
+                    BackgroundColor="#5195dd"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BorderRadius="10" 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    />
+                
                 <Label
                     Text="Codice provetta"
-                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Grid.Row="0"
-                    Grid.Column="0"/>
+                    Grid.Row="1" 
+                    Grid.Column="0"
+                    />
 
                 <Label
                     x:Name="labelProvetta"
-                    HorizontalOptions="Center"
+                    TextColor="#5195dd"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Grid.Row="0"
-                    Grid.Column="1"/>
+                    FontSize="Large"
+                    Grid.Row="1" 
+                    Grid.Column="1"
+                    />
 
-                <Button
-                    Text="Scan provetta"
-                    Clicked="scanProvetta"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"/>
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="2"/>
 
             </Grid>
-            <Grid>
+
+            <Grid Padding="10,5,5,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.1*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <Button
+                    Text="Scan paziente"
+                    Clicked="scanPaziente"
+                    TextColor="White"
+                    BackgroundColor="#5195dd"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    BorderRadius="10"
+                    Grid.Row="0" 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+                
+                <StackLayout Grid.ColumnSpan="2" Grid.Row="1"/>
 
                 <Label
                     Text="Nome del paziente"
                     VerticalOptions="Center"
                     HorizontalOptions="Start"
-                    Grid.Column="0" Grid.Row="0"/>
-
-                <Label
-                    x:Name="NomePaziente"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Grid.Column="1" Grid.Row="0"/>
-
-                <Label
-                    Text="Cognome del paziente"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start"
-                    Grid.Column="0" Grid.Row="1"/>
-
-                <Label
-                    x:Name="CognomePaziente"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Grid.Column="1" Grid.Row="1"/>
-
-                <Label
-                    Text="Reparto"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    FontSize="Medium"
                     Grid.Column="0" Grid.Row="2"/>
 
                 <Label
-                    x:Name="RepartoPaziente"
+                    x:Name="NomePaziente"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    HorizontalOptions="Center"
+                    TextColor="#5195dd"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
                     Grid.Column="1" Grid.Row="2"/>
+                
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="3"/>
+
+                <Label
+                    Text="Cognome del paziente"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    Grid.Column="0" Grid.Row="4"/>
+
+                <Label
+                    x:Name="CognomePaziente"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="#5195dd"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1" Grid.Row="4"/>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="5"/>
+
+                <Label
+                    Text="Reparto"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    FontSize="Medium"
+                    Grid.Column="0" Grid.Row="6"/>
+
+                <Label
+                    x:Name="RepartoPaziente"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="#5195dd"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1" Grid.Row="6"/>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="7"/>
 
                 <Label
                     Text="Letto"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Grid.Column="0" Grid.Row="3"/>
+                    TextColor="Black"
+                    FontSize="Medium"
+                    Grid.Column="0" Grid.Row="8"/>
 
                 <Label
                     x:Name="LettoPaziente"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    Grid.Column="1" Grid.Row="3"/>
+                    TextColor="#5195dd"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Grid.Column="1" Grid.Row="8"/>
 
-                <Button
-                    Text="Scan paziente"
-                    Clicked="scanPaziente"
-                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
-
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="9"/>
             </Grid>
+            
             <Button
                 Text="Prelievo eseguito"
+                TextColor="White"
                 x:Name="btnPrelievo"
                 Clicked="prelievo"
-                HorizontalOptions="Center"/>
+                BackgroundColor="#5195dd"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                BorderRadius="10" 
+                />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
