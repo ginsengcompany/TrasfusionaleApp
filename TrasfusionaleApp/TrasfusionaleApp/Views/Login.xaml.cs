@@ -30,13 +30,15 @@ namespace TrasfusionaleApp.Views
             if (esito)
             {
                 await DisplayAlert("Login", "Salve " + operatore.nome + " " + operatore.cognome, "OK");
+                entryUsername.Text = "";
+                entryPassword.Text = "";
                 await Navigation.PushAsync(new MainPage(operatore));
             }
             else
                 await DisplayAlert("Login", "Accesso negato", "OK");
         }
 
-	    public async void scan()
+	    public async void scan(object sender, EventArgs e)
 	    {
 	        var scanPage = new ZXingScannerPage();
 
@@ -53,11 +55,6 @@ namespace TrasfusionaleApp.Views
 	        // Navigate to our scanner page
 	        await Navigation.PushAsync(scanPage);
         }
-
-	    private void AvviaScansione(object sender, EventArgs e)
-	    {
-	         scan();
-	    }
 
 	    private void mostraPassword(object sender, EventArgs e)
 	    {
