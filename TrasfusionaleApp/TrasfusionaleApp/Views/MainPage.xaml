@@ -25,7 +25,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Source="posizione.png" Grid.Column="0" Grid.Row="0">
+                    <Image Source="locIcon.png" Grid.Column="0" Grid.Row="0" HeightRequest="100">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
                         </Image.GestureRecognizers>
@@ -35,6 +35,7 @@
                     Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
                     HorizontalTextAlignment="Center"
+                        FontSize="Medium"
                     WidthRequest="250" />
                 </Grid>
                 
@@ -46,11 +47,12 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Source="sangue.png" Grid.Column="0" Grid.Row="0"/>
+                    <Image Source="provettaIcona.png" Grid.Column="0" Grid.Row="0" HeightRequest="100"/>
                     <Label
                     Text="Pre-trasfusionalee"
                     Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
+                        FontSize="Medium"
                     HorizontalTextAlignment="Center"
                     WidthRequest="250" />
                 </Grid>
@@ -64,7 +66,10 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Source="sacca.png" Grid.Column="0" Grid.Row="0">
+                    <Image Source="bloodIcon.png" 
+                           Grid.Column="0"
+                           Grid.Row="0" 
+                           HeightRequest="100">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"></TapGestureRecognizer>
                         </Image.GestureRecognizers>
@@ -73,6 +78,7 @@
                     Text="Trasfusionale"
                     Grid.Column="0" Grid.Row="1"
                     VerticalOptions="Center"
+                        FontSize="Medium"
                     HorizontalTextAlignment="Center"
                     WidthRequest="250" />
                 </Grid>
