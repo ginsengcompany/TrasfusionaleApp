@@ -3,10 +3,112 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrasfusionaleApp.Views.PreTrasfusionale">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label
+                    Text="Codice provetta"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+
+                <Label
+                    x:Name="labelProvetta"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+
+                <Button
+                    Text="Scan provetta"
+                    Clicked="btnScanProvetta"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label
+                    Text="Nome del paziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Grid.Column="0" Grid.Row="0"/>
+
+                <Label
+                    x:Name="NomePaziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" Grid.Row="0"/>
+
+                <Label
+                    Text="Cognome del paziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Grid.Column="0" Grid.Row="1"/>
+
+                <Label
+                    x:Name="CognomePaziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" Grid.Row="1"/>
+
+                <Label
+                    Text="Reparto"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="0" Grid.Row="2"/>
+
+                <Label
+                    x:Name="RepartoPaziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" Grid.Row="2"/>
+
+                <Label
+                    Text="Letto"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="0" Grid.Row="3"/>
+
+                <Label
+                    x:Name="LettoPaziente"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.Column="1" Grid.Row="3"/>
+
+                <Button
+                    Clicked="btnScanPaziente"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            </Grid>
+            <Button
+                Text="Prelievo eseguito"
+                x:Name="btnPrelievo"
+                Clicked="prelievo"
+                HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

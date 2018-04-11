@@ -12,8 +12,11 @@ namespace TrasfusionaleApp
 		public App ()
 		{
 			InitializeComponent();
-
             MainPage = new NavigationPage(new Login());
+            if (App.Current.Properties.ContainsKey("struttura"))
+                App.Current.Properties["struttura"] = "150021";
+            else
+                App.Current.Properties.Add("struttura", "150021");
 		}
 
 		protected override void OnStart ()
