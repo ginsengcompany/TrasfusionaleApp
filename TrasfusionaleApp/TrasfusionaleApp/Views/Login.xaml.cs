@@ -58,5 +58,14 @@ namespace TrasfusionaleApp.Views
 	    {
 	         scan();
 	    }
+
+	    private void mostraPassword(object sender, EventArgs e)
+	    {
+	        if (entryPassword.IsPassword)
+	            entryPassword.IsPassword = false;
+	        else
+                entryPassword.IsPassword = true;
+	        
+	    }
 	}
 }
