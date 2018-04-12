@@ -25,7 +25,10 @@ namespace TrasfusionaleApp.Views
 	        {
 	            if (operatore.codice_operatore != 1)
 	                Navigation.PushAsync(new LoginTrasfusionale(operatore));
-	            //else
+	            else
+	            {
+	                DisplayAlert("xxx", "xxxx", "xxx");
+	            }
             }
             else
 	        {

@@ -218,12 +218,18 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\provettaIcona.png" />
+    <BundleResource Include="Resources\logoCardarelli.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\bloodIcon.png" />
+    <BundleResource Include="Resources\provetta.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\locIcon.png" />
+    <BundleResource Include="Resources\sacca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\geo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\codescan.png" />
   </ItemGroup>
 </Project>
