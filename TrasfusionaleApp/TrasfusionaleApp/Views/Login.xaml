@@ -87,19 +87,17 @@
                     </Image>
                     </Grid>
                     </StackLayout>
-                    <Button
-                        Margin="20"
-                        Text="Login"
-                        Grid.Row="2"
-                        VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        BackgroundColor="#5195DD"
-                        TextColor="White" 
-                        CornerRadius="25"
-                        Clicked="AvvioLogin"
-                        />
-                
-               
+                <Image Source="android_normal.png"
+                       Margin="20" 
+                       Grid.Row="2"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       WidthRequest="225"
+                       >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AvvioLogin"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
