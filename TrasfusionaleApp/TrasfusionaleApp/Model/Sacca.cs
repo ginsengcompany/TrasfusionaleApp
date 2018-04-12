@@ -4,7 +4,9 @@ using System.Text;
 
 namespace TrasfusionaleApp.Model
 {
-    class Sacca
+   public class Sacca
     {
+        public string uid { get; set; }
+        public string uidPaziente { get; set; }
     }
 }
