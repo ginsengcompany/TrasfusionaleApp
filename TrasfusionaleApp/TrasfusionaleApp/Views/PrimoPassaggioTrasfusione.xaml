@@ -23,6 +23,7 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     BorderRadius="10" 
+                    Clicked="ScannerizzaSacca"
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -39,7 +40,7 @@
                     />
 
                 <Label
-                    x:Name="labelProvetta"
+                    x:Name="labelSacca"
                     TextColor="#5195dd"
                     FontAttributes="Bold"
                     HorizontalOptions="Start"
@@ -78,6 +79,7 @@
                     HorizontalOptions="Center"
                     BorderRadius="10"
                     Grid.Row="0" 
+                    Clicked="ScannerizzaPaziente"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"/>
 
@@ -159,9 +161,8 @@
 
                 <StackLayout Grid.ColumnSpan="2" BackgroundColor="LightGray"  Grid.Row="9"/>
             </Grid>
-
             <Button
-                Text="Prelievo eseguito"
+                Text="Inizia Trasfusione"
                 TextColor="White"
                 x:Name="btnPrelievo"
                 BackgroundColor="#5195dd"
