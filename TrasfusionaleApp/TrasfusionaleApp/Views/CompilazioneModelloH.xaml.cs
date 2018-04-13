@@ -19,21 +19,21 @@ namespace TrasfusionaleApp.Views
 		{
 			InitializeComponent ();
 		    this.infermiere = operatore;
+            this.modelloInf = new ModelloHcs();
 		}
 
-	    public CompilazioneModelloH(Operatore medico, Operatore infermiere, ModelloHcs modello)
+	    public CompilazioneModelloH(Operatore medico, Operatore infermiere, ModelloHcs modelloInf)
 	    {
 	        InitializeComponent();
 	        this.medico = medico;
 	        this.infermiere = infermiere;
-	        this.modelloInf = modello;
-	        this.modelloMed = modello;
-
+	        this.modelloInf = modelloInf;
+	        this.modelloMed = new ModelloHcs();
 	    }
 
         private async void InvioDati(object sender, EventArgs e)
 	    {
-	        if (medico == default(Operatore))
+	        if (medico == null)
 	        {
 	            if (entryConfermaPassword.Text == infermiere.password)
 	            {
@@ -63,7 +63,7 @@ namespace TrasfusionaleApp.Views
                     else
                     {
                         await DisplayAlert("Attenzione", "I modelli compilati non risultano correttamente idonei per proseguire nel processo trasfusionale", "OK");
-                        await Navigation.PushModalAsync(new MainPage(infermiere));
+                        App.Current.MainPage = new NavigationPage(new MainPage(infermiere));
                     }
                 }
                 else
@@ -77,7 +77,7 @@ namespace TrasfusionaleApp.Views
             public ModelloHcs modello_infermiere { get; set; }
             public Operatore infermiere { get; set; }
             public Operatore medico { get; set; }
-            private readonly string restInvioModelliCompilati = "";
+            private readonly string restInvioModelliCompilati = "http://192.168.125.14:3000/modelloH/controllomodellicompilati";
 
             public InvioModelliCompilati() { }
             public InvioModelliCompilati(ModelloHcs modelloInf, ModelloHcs modelloMed, Operatore infermiere, Operatore medico)
@@ -91,11 +91,13 @@ namespace TrasfusionaleApp.Views
             public async Task<bool> inviaDati()
             {
                 REST<InvioModelliCompilati, bool> connessioneModelliCompilati = new REST<InvioModelliCompilati, bool>();
-                var result = await connessioneModelliCompilati.PostJson(restInvioModelliCompilati, this);
+                List<Header> headers = new List<Header>();
+                headers.Add(new Header("access-token", App.Current.Properties["access-token"].ToString()));
+                var result = await connessioneModelliCompilati.PostJson(restInvioModelliCompilati, this, headers);
                 if (connessioneModelliCompilati.responseMessage != System.Net.HttpStatusCode.OK)
                     return false;
                 else
-                    return true;
+                    return result;
             }
         }
 	}
