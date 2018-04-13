@@ -4,14 +4,14 @@
              x:Class="TrasfusionaleApp.Views.CompilazioneModelloH" Title="Modello H">
    <ContentPage.Content>
         <StackLayout Spacing="0">
-            <ScrollView>
-                <Grid BackgroundColor="Black" RowSpacing="1" Padding="5">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="Black" RowSpacing="1" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -27,7 +27,7 @@
 
                     </StackLayout>
                     <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0" >
-                        <Switch  IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                        <Switch x:Name="compatibilitaImmunologica" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
                     </StackLayout>
 
                     <StackLayout  BackgroundColor="LightGray"  Grid.Row="1" Grid.Column="0" Padding="20">
@@ -39,7 +39,7 @@
 
                     </StackLayout>
                     <StackLayout BackgroundColor="LightGray" Grid.Column="1" Grid.Row="1" >
-                        <Switch  IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                        <Switch x:Name="ispezioneEmocomponenti" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
                     </StackLayout>
 
 
@@ -52,12 +52,16 @@
 
                     </StackLayout>
                     <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="2" >
-                        <Switch  IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                        <Switch  x:Name="identificazioneRiceventeRichiesta" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
                     </StackLayout>
 
 
 
-                    <StackLayout  BackgroundColor="LightGray"  Grid.Row="3" Grid.Column="0" Padding="20">
+                    <StackLayout  
+                        BackgroundColor="LightGray"  
+                        Grid.Row="3" 
+                        Grid.Column="0" 
+                        Padding="20">
                         <Label 
                         HorizontalOptions="CenterAndExpand" 
                         HorizontalTextAlignment="Center" 
@@ -65,12 +69,17 @@
                         Text="Identificazione del ricevente: verifica dei dati identificativi con quelli riportati sul braccialetto"></Label>
 
                     </StackLayout>
-                    <StackLayout BackgroundColor="LightGray" Grid.Column="1" Grid.Row="3" >
-                        <Switch  IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
-                    </StackLayout>
-
-
-
+                    <StackLayout 
+                        BackgroundColor="LightGray" 
+                        Grid.Column="1" 
+                        Grid.Row="3" >
+                        <Switch  
+                            IsToggled="False"
+                            x:Name="identificazioneRiceventeScan"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"></Switch>
+                    </StackLayout> 
+                    
                     <StackLayout  BackgroundColor="White"  Grid.Row="4" Grid.Column="0" Padding="20">
                         <Label 
                         HorizontalOptions="CenterAndExpand" 
@@ -80,23 +89,26 @@
 
                     </StackLayout>
                     <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="4" >
-                        <Switch  IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                        <Switch x:Name="verificaOgniUnitaDaTrasfondere" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
                     </StackLayout>
                 </Grid>
             </ScrollView>
-            <Grid BackgroundColor="Black" RowSpacing="1" Padding="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <StackLayout VerticalOptions="FillAndExpand"  >
+                <Grid BackgroundColor="Black" RowSpacing="1" Padding="5" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <StackLayout BackgroundColor="White"  Grid.Row="1" Grid.Column="0" Padding="20">
-                    <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand"></Entry>
-                    <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" BackgroundColor="#5195dd"></Button>
-                </StackLayout>
-            </Grid>
+                    <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="0" Padding="20">
+                        <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand"></Entry>
+                        <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" BackgroundColor="#5195dd"></Button>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

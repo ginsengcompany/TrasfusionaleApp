@@ -12,22 +12,41 @@ namespace TrasfusionaleApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CompilazioneModelloH : ContentPage
 	{
-	    private Operatore operatore;
+	    private Operatore medico, infermiere;
+	    private ModelloHcs modelloInf, modelloMed;
 		public CompilazioneModelloH (Operatore operatore)
 		{
 			InitializeComponent ();
-		    this.operatore = operatore;
+		    this.infermiere = operatore;
 		}
 
-	    private void InvioDati(object sender, EventArgs e)
+	    public CompilazioneModelloH(Operatore medico, Operatore infermiere, ModelloHcs modello)
 	    {
-	        if (entryConfermaPassword.Text == operatore.password)
+	        InitializeComponent();
+	        this.medico = medico;
+	        this.infermiere = infermiere;
+	        this.modelloInf = modello;
+	        this.modelloMed = modello;
+
+	    }
+
+        private void InvioDati(object sender, EventArgs e)
+	    {
+	        if (entryConfermaPassword.Text == infermiere.password)
 	        {
-	            if (operatore.codice_operatore != 1)
-	                Navigation.PushAsync(new LoginTrasfusionale(operatore));
-	            else
+	            if (infermiere.codice_operatore != 1)
 	            {
-	                DisplayAlert("xxx", "xxxx", "xxx");
+	                modelloInf.compatibilitaImmunologica = compatibilitaImmunologica.IsToggled;
+	                modelloInf.identificazioneRiceventeRichiesta = identificazioneRiceventeRichiesta.IsToggled;
+	                modelloInf.identificazioneRiceventeScan = identificazioneRiceventeScan.IsToggled;
+	                modelloInf.ispezioneEmocomponenti = ispezioneEmocomponenti.IsToggled;
+	                modelloInf.verificaOgniUnitaDaTrasfondere = verificaOgniUnitaDaTrasfondere.IsToggled;
+
+                    Navigation.PushAsync(new LoginTrasfusionale(infermiere,modelloInf));
+                }
+                else
+	            {
+
 	            }
             }
             else

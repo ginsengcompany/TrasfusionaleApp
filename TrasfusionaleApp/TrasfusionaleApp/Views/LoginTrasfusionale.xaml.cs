@@ -13,11 +13,15 @@ namespace TrasfusionaleApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginTrasfusionale : ContentPage
 	{
-        private Operatore operatore,medico;
-		public LoginTrasfusionale (Operatore operatore)
+        private Operatore infermiere,medico;
+	    private ModelloHcs modello;
+
+		public LoginTrasfusionale (Operatore infermiere,ModelloHcs modello)
 		{
 			InitializeComponent ();
-            this.operatore = operatore;
+            this.infermiere = infermiere;
+		    this.modello = modello;
+
 		}
 
         public async void scan(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace TrasfusionaleApp.Views
             if (esito)
             {
                 await DisplayAlert("Login", "Salve " + medico.nome + " " + medico.cognome, "OK");
-                await Navigation.PushAsync(new CompilazioneModelloH(medico));
+                await Navigation.PushAsync(new CompilazioneModelloH(medico,infermiere,modello));
                 entryUsernameMedico.Text = "";
                 entryPasswordMedico.Text = "";
             }
