@@ -4,9 +4,14 @@
              x:Class="TrasfusionaleApp.Views.Trasfusionale">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button
+                Text="Inizia trasfusione"
+                x:Name="btnInizia"
+                Clicked="inizia" />
+            <Button
+                Text="Fine trasfusione"
+                x:Name="btnFine"
+                Clicked="fine" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

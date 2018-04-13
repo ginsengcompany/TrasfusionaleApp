@@ -59,7 +59,7 @@ namespace TrasfusionaleApp.Views
                     InvioModelliCompilati modelliCompilati = new InvioModelliCompilati(modelloInf, modelloMed, infermiere, medico);
                     var result = await modelliCompilati.inviaDati();
                     if (result)
-                        await Navigation.PushAsync(new PrimoPassaggioTrasfusione());
+                        await Navigation.PushAsync(new PrimoPassaggioTrasfusione(infermiere, medico));
                     else
                     {
                         await DisplayAlert("Attenzione", "I modelli compilati non risultano correttamente idonei per proseguire nel processo trasfusionale", "OK");

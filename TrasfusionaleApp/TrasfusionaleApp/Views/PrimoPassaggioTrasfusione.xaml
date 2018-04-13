@@ -164,7 +164,8 @@
             <Button
                 Text="Inizia Trasfusione"
                 TextColor="White"
-                x:Name="btnPrelievo"
+                x:Name="btnTrasfusione"
+                Clicked="vaiTrasfusionale"
                 BackgroundColor="#5195dd"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"

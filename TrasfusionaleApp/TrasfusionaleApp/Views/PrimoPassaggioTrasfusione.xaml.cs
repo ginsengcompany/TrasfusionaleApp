@@ -13,14 +13,17 @@ namespace TrasfusionaleApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PrimoPassaggioTrasfusione : ContentPage
 	{
+        private Operatore infermiere, medico;
 	    private Sacca sacca;
 	    private bool scanSaccaEseguita = false, scanPazienteEseguita=false;
 	    private Paziente paziente;
 	    private bool pazienteScan = false, saccaScan = false;
 
-        public PrimoPassaggioTrasfusione ()
+        public PrimoPassaggioTrasfusione (Operatore infermiere, Operatore medico)
 		{
 			InitializeComponent ();
+            this.infermiere = infermiere;
+            this.medico = medico;
 		}
 
 	    private async void ScannerizzaSacca(object sender, EventArgs e)
@@ -76,22 +79,22 @@ namespace TrasfusionaleApp.Views
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
-                            btnPrelievo.IsEnabled = true;
+                            btnTrasfusione.IsEnabled = true;
                         }
                         else
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione non corretta", "OK");
-                           btnPrelievo.IsEnabled = false;
+                            btnTrasfusione.IsEnabled = false;
                         }
                     }
                    else
-                        btnPrelievo.IsEnabled = false;
+                        btnTrasfusione.IsEnabled = false;
                 }
                 else
                 {
                     labelSacca.Text = "";
                     saccaScan = false;
-                    btnPrelievo.IsEnabled = pazienteScan && saccaScan;
+                    btnTrasfusione.IsEnabled = pazienteScan && saccaScan;
                 }
             }
         }
@@ -113,16 +116,16 @@ namespace TrasfusionaleApp.Views
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
-                           btnPrelievo.IsEnabled = true;
+                            btnTrasfusione.IsEnabled = true;
                         }
                         else
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione non corretta", "OK");
-                            btnPrelievo.IsEnabled = false;
+                            btnTrasfusione.IsEnabled = false;
                         }
                     }
                     else
-                        btnPrelievo.IsEnabled = false;
+                        btnTrasfusione.IsEnabled = false;
                 }
                 else
                 {
@@ -131,9 +134,14 @@ namespace TrasfusionaleApp.Views
                     RepartoPaziente.Text = "";
                     LettoPaziente.Text = "";
                     pazienteScan = false;
-                  btnPrelievo.IsEnabled = pazienteScan && saccaScan;
+                    btnTrasfusione.IsEnabled = pazienteScan && saccaScan;
                 }
             }
+        }
+
+        private async void vaiTrasfusionale(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Trasfusionale(infermiere,medico));
         }
     }
 }
