@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TrasfusionaleApp.Model;
 using TrasfusionaleApp.Views;
 using Xamarin.Forms;
 
@@ -9,10 +10,11 @@ namespace TrasfusionaleApp
 {
 	public partial class App : Application
 	{
+
 		public App ()
 		{
 			InitializeComponent();
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new Trasfusionale(new Operatore(){uid = "ciao"},new Operatore(){uid = "ciao26"} ));
             if (App.Current.Properties.ContainsKey("struttura"))
                 App.Current.Properties["struttura"] = "150021";
             else
