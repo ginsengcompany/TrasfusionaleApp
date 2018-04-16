@@ -5,7 +5,7 @@
    <ContentPage.Content>
         <StackLayout Spacing="0">
             <ScrollView VerticalOptions="FillAndExpand">
-                <Grid BackgroundColor="Black" RowSpacing="1" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid RowSpacing="1" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -93,8 +93,8 @@
                     </StackLayout>
                 </Grid>
             </ScrollView>
-            <StackLayout VerticalOptions="FillAndExpand"  >
-                <Grid BackgroundColor="Black" RowSpacing="1" Padding="5" VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Grid RowSpacing="1" Padding="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
@@ -102,10 +102,8 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand"  Grid.Row="1" Grid.Column="0" Padding="20">
-                        <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand"></Entry>
-                        <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" BackgroundColor="#5195dd"></Button>
-                    </StackLayout>
+                        <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"></Entry>
+                    <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
             </StackLayout>
            
