@@ -17,6 +17,8 @@ namespace TrasfusionaleApp.Model
         private readonly string restLogin = "http://192.168.125.14:3000/operatore/login";
         private readonly string restMe = "http://192.168.125.14:3000/operatore/me";
         private readonly string restLoginTrasfusionale = "http://192.168.125.14:3000/operatore/loginTrasfusione";
+        public static readonly string eventSocketMedico = "uidmedico";
+        public static readonly string eventSocketInfermiere = "uidinfermiere";
 
         public async Task<bool> Login()
         {

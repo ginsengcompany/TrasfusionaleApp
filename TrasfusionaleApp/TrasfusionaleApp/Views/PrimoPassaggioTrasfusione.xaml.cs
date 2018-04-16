@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quobject.SocketIoClientDotNet.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace TrasfusionaleApp.Views
 	    private bool scanSaccaEseguita = false, scanPazienteEseguita=false;
 	    private Paziente paziente;
 	    private bool pazienteScan = false, saccaScan = false;
+        private Socket socket;
 
         public PrimoPassaggioTrasfusione (Operatore infermiere, Operatore medico)
 		{
@@ -76,6 +78,12 @@ namespace TrasfusionaleApp.Views
                     saccaScan = true;
                     if (pazienteScan && saccaScan)
                     {
+                        if (socket == null)
+                            socket = IO.Socket("http://192.168.125.14:3001");
+                        socket.Emit(Operatore.eventSocketInfermiere, infermiere.uid);
+                        socket.Emit(Operatore.eventSocketMedico,medico.uid);
+                        socket.Emit(Paziente.eventSocketPaziente, paziente.uid);
+                        socket.Emit(Sacca.eventSocketSacca, sacca.uid);
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -99,6 +107,27 @@ namespace TrasfusionaleApp.Views
             }
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            annullaOperazione();
+            return true;
+        }
+
+        private void toolbarAnnulla(object sender, EventArgs e)
+        {
+            annullaOperazione();
+        }
+
+        private async void annullaOperazione()
+        {
+            var response = await DisplayAlert("ATTENZIONE", "Sei sicuro di voler annullare l'operazione?", "SI", "No");
+            if (response)
+            {
+                socket.Disconnect();
+                App.Current.MainPage = new NavigationPage(new MainPage(infermiere));
+            }
+        }
+
         private async void controllaScanPaziente()
         {
             if (scanPazienteEseguita)
@@ -113,6 +142,12 @@ namespace TrasfusionaleApp.Views
                     pazienteScan = true;
                     if (pazienteScan && saccaScan)
                     {
+                        if (socket == null)
+                            socket = IO.Socket("http://192.168.125.14:3001");
+                        socket.Emit(Operatore.eventSocketInfermiere, infermiere.uid);
+                        socket.Emit(Operatore.eventSocketMedico, medico.uid);
+                        socket.Emit(Paziente.eventSocketPaziente, paziente.uid);
+                        socket.Emit(Sacca.eventSocketSacca, sacca.uid);
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -141,7 +176,7 @@ namespace TrasfusionaleApp.Views
 
         private async void vaiTrasfusionale(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Trasfusionale(infermiere,medico));
+            await Navigation.PushAsync(new Trasfusionale(infermiere,medico, socket));
         }
     }
 }
