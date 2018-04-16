@@ -14,7 +14,7 @@ namespace TrasfusionaleApp
 		public App ()
 		{
 			InitializeComponent();
-            MainPage = new NavigationPage(new Trasfusionale(new Operatore(){uid = "ciao"},new Operatore(){uid = "ciao26"} ));
+            MainPage = new NavigationPage(new Login());
             if (App.Current.Properties.ContainsKey("struttura"))
                 App.Current.Properties["struttura"] = "150021";
             else
