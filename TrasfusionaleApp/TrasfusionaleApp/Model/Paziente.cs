@@ -12,6 +12,9 @@ namespace TrasfusionaleApp.Model
         public string nome { get; set; }
         public string cognome { get; set; }
         public string gruppo { get; set; }
+        public string temperatura { get; set; }
+        public string frequenzaCardiaca { get; set; }
+        public string pressioneArteriosa { get; set; }
         public string rh { get; set; }
         public string reparto { get; set; }
         public int letto { get; set; }
