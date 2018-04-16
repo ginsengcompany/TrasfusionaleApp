@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
-             x:Class="TrasfusionaleApp.Views.Login" >
+             x:Class="TrasfusionaleApp.Views.Login" 
+             Title="Login">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
                      Margin="10"
@@ -29,15 +30,17 @@
                                           Grid.Row="0"
                                           x:Name="entryUsername"
                                           HeightRequest="50"
+                                          BorderWidth="3"
                                           IsCurvedCornersEnabled="True"  
                                           BorderColor="#5195DD"
                                           VerticalOptions="Center"
                                           HorizontalTextAlignment="Center"   
-                                          Placeholder="Inserire UID"  
+                                          Placeholder="UID"  
                                           PlaceholderColor="Gray"  
                                           TextColor="Black"  
                                           FontAttributes="Bold">
                        </model:CustomEntry>
+                       
                        <Image 
                            Grid.Row="0" 
                            Margin="0,0,4,0"
@@ -69,11 +72,12 @@
                                        Grid.Row="0"
                                        IsCurvedCornersEnabled="True"  
                                        HeightRequest="50"
+                                       BorderWidth="3"
                                        BorderColor="#5195DD"
                                        IsPassword="True"
                                        VerticalOptions="Center"
-                                       HorizontalTextAlignment="Center"   
-                                       Placeholder="Inserire Password"  
+                                       HorizontalTextAlignment="Center"
+                                       Placeholder="PASSWORD"  
                                        PlaceholderColor="Gray"  
                                        TextColor="Black"  
                                        FontAttributes="Bold">
@@ -90,7 +94,6 @@
                     </StackLayout>
                 <Image Source="android_normal.png"
                        Margin="20" 
-                       Grid.Row="2"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        WidthRequest="225"
