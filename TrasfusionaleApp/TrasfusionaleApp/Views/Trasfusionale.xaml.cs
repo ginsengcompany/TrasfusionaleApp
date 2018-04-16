@@ -15,6 +15,7 @@ namespace TrasfusionaleApp.Views
 	{
         private Operatore infermiere, medico;
         private Socket socket;
+	    private bool animazione = false;
 		public Trasfusionale (Operatore infermiere, Operatore medico)
 		{
 			InitializeComponent ();
@@ -23,6 +24,15 @@ namespace TrasfusionaleApp.Views
             this.medico = medico;
 		}
 
+	    private async void animazioneGoccia()
+	    {
+	        while (animazione)
+	        {
+	           await goccia.TranslateTo(0, 500, 2000);
+	            await goccia.TranslateTo(0, 0, 0);
+	        }
+	    }
+
         private void inizia (object sender, EventArgs e)
         {
             socket = IO.Socket("http://192.168.125.14:3001");
@@ -30,6 +40,11 @@ namespace TrasfusionaleApp.Views
             btnFine.IsEnabled = true;
             socket.Emit("uidinfermiere", infermiere.uid);
             socket.Emit("uidmedico", medico.uid);
+            animazione = true;
+            animazioneGoccia();
+            
+            
+            
         }
 
         private void fine (object sender, EventArgs e)
@@ -37,6 +52,7 @@ namespace TrasfusionaleApp.Views
             socket.Disconnect();
             btnFine.IsEnabled = false;
             btnInizia.IsEnabled = true;
+            animazione = false;
         }
 	}
 }

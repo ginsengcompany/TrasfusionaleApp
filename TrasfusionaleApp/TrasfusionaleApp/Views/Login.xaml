@@ -9,7 +9,8 @@
                      Padding="0,0,0,20">
             <StackLayout Orientation="Vertical" >
 
-                <Image Source="logoCardarelli.jpg"
+                <Image x:Name="logo"
+                    Source="logoCardarelli.jpg"
                        HorizontalOptions="Center"
                        HeightRequest="120"/>
                <StackLayout Padding="30,0,30,0">

@@ -62,7 +62,9 @@ namespace TrasfusionaleApp.Views
 	            entryPassword.IsPassword = false;
 	        else
                 entryPassword.IsPassword = true;
-	        
-	    }
-	}
+
+
+
+        }
+    }
 }

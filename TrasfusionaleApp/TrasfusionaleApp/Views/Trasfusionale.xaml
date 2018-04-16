@@ -12,6 +12,7 @@
                 Text="Fine trasfusione"
                 x:Name="btnFine"
                 Clicked="fine" />
+            <Image x:Name="goccia" Source="goccia.png" HeightRequest="60"></Image>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
