@@ -12,7 +12,11 @@
             Priority="0"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        
         <StackLayout>
+            <Entry x:Name="entryPressioneArteriosa" Placeholder="Inserire Pressione Arteriosa"></Entry>
+            <Entry x:Name="entryTemperatura" Placeholder="Inserire Temperatura corporea"></Entry>
+            <Entry x:Name="entryFrequenzaCardiaca" Placeholder="Inserire Frequenza cardiaca"></Entry>
             <Button
                 Text="Inizia trasfusione"
                 x:Name="btnInizia"
