@@ -16,15 +16,16 @@ namespace TrasfusionaleApp.Views
         private Operatore infermiere, medico;
         private Socket socket;
 	    private bool animazione = false;
-        private readonly string eventIniziaTrasfusione = "iniziotrasfusione";
-        private readonly string eventFineTrasfusione = "finetrasfusione";
-		public Trasfusionale (Operatore infermiere, Operatore medico, Socket socket)
+        private ClassSock datiSock;
+
+		public Trasfusionale (Operatore infermiere, Operatore medico, Socket socket, ClassSock classSock)
 		{
 			InitializeComponent ();
             btnFine.IsEnabled = false;
             this.infermiere = infermiere;
             this.medico = medico;
             this.socket = socket;
+            this.datiSock = classSock;
 		}
 
 	    private async void animazioneGoccia()
@@ -38,7 +39,7 @@ namespace TrasfusionaleApp.Views
 
         private void inizia (object sender, EventArgs e)
         {
-            socket.Emit(eventIniziaTrasfusione);
+            socket.Emit(ClassSock.eventIniziaTrasfusione);
             btnInizia.IsEnabled = false;
             btnFine.IsEnabled = true;
             animazione = true;
@@ -47,7 +48,7 @@ namespace TrasfusionaleApp.Views
 
         private async void fine (object sender, EventArgs e)
         {
-            socket.Emit(eventFineTrasfusione);
+            socket.Emit(ClassSock.eventFineTrasfusione);
             socket.Disconnect();
             btnFine.IsEnabled = false;
             btnInizia.IsEnabled = true;
