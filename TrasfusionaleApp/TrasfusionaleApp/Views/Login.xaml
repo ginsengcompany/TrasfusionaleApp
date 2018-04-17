@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
              x:Class="TrasfusionaleApp.Views.Login" 
-             Title="Login">
+             Title="Login" 
+             BackgroundColor="#5195DD">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
                      Margin="10"
@@ -36,7 +37,7 @@
                                           VerticalOptions="Center"
                                           HorizontalTextAlignment="Center"   
                                           Placeholder="UID"  
-                                          PlaceholderColor="Gray"  
+                                          PlaceholderColor="Gray"
                                           TextColor="Black"  
                                           FontAttributes="Bold">
                        </model:CustomEntry>
