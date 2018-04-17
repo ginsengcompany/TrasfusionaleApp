@@ -8,6 +8,7 @@ namespace TrasfusionaleApp.Model
    public class CustomEntry: Entry
     {
         
+        
         public static readonly BindableProperty BorderColorProperty =
             BindableProperty.Create(nameof(BorderColor),
                 typeof(Color), typeof(CustomEntry), Color.Gray);
