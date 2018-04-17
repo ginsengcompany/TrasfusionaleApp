@@ -12,7 +12,7 @@
             <StackLayout Orientation="Vertical" >
 
                 <Image x:Name="logo"
-                    Source="logoCardarelli.jpg"
+                    Source="logoCardarelli1.png"
                        HorizontalOptions="Center"
                        HeightRequest="120"/>
                <StackLayout Padding="30,0,30,0">
