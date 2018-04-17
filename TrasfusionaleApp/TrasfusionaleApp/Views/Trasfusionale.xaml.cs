@@ -15,6 +15,7 @@ namespace TrasfusionaleApp.Views
 	{
         private Operatore infermiere, medico;
         private Socket socket;
+	    private Paziente paziente;
 	    private bool animazione = false;
         private readonly string eventIniziaTrasfusione = "iniziotrasfusione";
         private readonly string eventFineTrasfusione = "finetrasfusione";
@@ -25,6 +26,11 @@ namespace TrasfusionaleApp.Views
             this.infermiere = infermiere;
             this.medico = medico;
             this.socket = socket;
+            paziente= new Paziente();
+		    paziente.temperatura = entryTemperatura.Text;
+		    paziente.frequenzaCardiaca = entryFrequenzaCardiaca.Text;
+		    paziente.pressioneArteriosa = entryPressioneArteriosa.Text;
+
 		}
 
 	    private async void animazioneGoccia()
