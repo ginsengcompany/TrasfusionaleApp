@@ -6,7 +6,7 @@
 
     
     <StackLayout Orientation="Vertical" Margin="10" >
-        <Image Source="logoCardarelli.jpg" HeightRequest="200" HorizontalOptions="CenterAndExpand"></Image>
+        <Image Source="logoCardarelli1.png" HeightRequest="200" HorizontalOptions="CenterAndExpand"></Image>
 
         <ScrollView>
 
