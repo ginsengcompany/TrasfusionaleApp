@@ -11,7 +11,7 @@
                     <ColumnDefinition Width="0.3*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition> <!-- 0 ENTRY-->
+                    <RowDefinition Height="Auto"></RowDefinition> <!-- 0 ENTRY-->
                     <RowDefinition Height="0.2*"></RowDefinition> <!-- 1 S-->
                     <RowDefinition Height="*"></RowDefinition> <!-- 2 NOME-->
                     <RowDefinition Height="*"></RowDefinition> <!-- 3 NOME-->
@@ -30,17 +30,15 @@
                 </Grid.RowDefinitions>
                 <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="0" Padding="3">
                     <Entry
-                    Grid.Column="0" Grid.Row="0"
                     x:Name="entryCodiceProvetta"
                     Placeholder="Inserisci UID"    
                     VerticalOptions="Center"
                     HorizontalOptions="CenterAndExpand"
                     WidthRequest="250"/>
                 </StackLayout>
-                <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0">
+                <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0" Padding="7" VerticalOptions="FillAndExpand">
                     <Image 
-                    Grid.Column="1" Grid.Row="0"
-                    Source="scan.png" Aspect="Fill" >
+                    Source="codescan.png" HeightRequest="60">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="scan"></TapGestureRecognizer>
                         </Image.GestureRecognizers>

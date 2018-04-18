@@ -4,6 +4,7 @@
              xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
              x:Class="TrasfusionaleApp.Views.Login" 
              Title="Login" 
+             NavigationPage.HasNavigationBar="False"
             >
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
@@ -13,11 +14,20 @@
                 <Image x:Name="logo"
                     Source="logoCardarelli1.png"
                        HorizontalOptions="Center"
-                       HeightRequest="120"/>
-                <Frame  BackgroundColor="#97BCE3" CornerRadius="15" HasShadow="True" Margin="40,50,40,40">
+                       HeightRequest="120"
+                       Margin="10,30,10,30"/>
+                <Frame  BackgroundColor="#97BCE3" 
+                        CornerRadius="15"
+                        HasShadow="True"
+                        Margin="20,50,20,40">
                     <StackLayout VerticalOptions="CenterAndExpand">
-                        <Label Text="LOGIN" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="Large" TextColor="White" FontAttributes="Bold"></Label>
-                    <StackLayout Padding="30,0,30,0">
+                        <Label Text="LOGIN" 
+                               HorizontalOptions="CenterAndExpand" 
+                               HorizontalTextAlignment="Center" 
+                               FontSize="Large" 
+                               TextColor="White" 
+                               FontAttributes="Bold"/>
+                    <StackLayout Padding="10,0,10,0">
 
 
                         <Grid HorizontalOptions="Center" >
@@ -62,7 +72,7 @@
 
 
                     <!-- <Image Source="pass_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="1" HeightRequest="50"/> -->
-                    <StackLayout Padding="30,0,30,0">
+                    <StackLayout Padding="10,0,10,0">
                         <Grid HorizontalOptions="Center" 
                          >
 
