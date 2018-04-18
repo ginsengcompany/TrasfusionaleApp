@@ -13,19 +13,36 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         
-        <StackLayout>
-            <Entry x:Name="entryPressioneArteriosa" Placeholder="Inserire Pressione Arteriosa"></Entry>
-            <Entry x:Name="entryTemperatura" Placeholder="Inserire Temperatura corporea"></Entry>
-            <Entry x:Name="entryFrequenzaCardiaca" Placeholder="Inserire Frequenza cardiaca"></Entry>
+        <StackLayout Orientation="Vertical">
+            <Entry x:Name="entryPressioneArteriosa" Placeholder="Inserire Pressione Arteriosa" Unfocused="controlloCampiEntry"/>
+            <Entry x:Name="entryTemperatura" Placeholder="Inserire Temperatura corporea" Unfocused="controlloCampiEntry"/>
+            <Entry x:Name="entryFrequenzaCardiaca" Placeholder="Inserire Frequenza cardiaca" Unfocused="controlloCampiEntry"/>
             <Button
                 Text="Inizia trasfusione"
                 x:Name="btnInizia"
+                IsEnabled="False"
                 Clicked="inizia" />
             <Button
                 Text="Fine trasfusione"
                 x:Name="btnFine"
+                IsEnabled="False"
                 Clicked="fine" />
-            <Image x:Name="goccia" Source="goccia.png" HeightRequest="60"></Image>
+            <Label
+                x:Name="labelNote"
+                Text="Note"
+                IsVisible="False"
+                HorizontalOptions="CenterAndExpand"/>
+            <Editor
+                x:Name="editorNote"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                IsVisible="True"/>
+            <Button
+                x:Name="btnInviaDati"
+                Text="Invia dati"
+                Clicked="inviaDati"
+                IsEnabled="False"/>
+            <!--<Image x:Name="goccia" Source="goccia.png" HeightRequest="60"></Image> -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

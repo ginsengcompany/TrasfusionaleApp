@@ -1,4 +1,5 @@
-﻿using Quobject.SocketIoClientDotNet.Client;
+﻿using Newtonsoft.Json;
+using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace TrasfusionaleApp.Views
 	    private bool pazienteScan = false, saccaScan = false;
         private Socket socket;
         private ClassSock datiSocket;
+        private readonly string eventUid = "uid";
 
         public PrimoPassaggioTrasfusione (Operatore infermiere, Operatore medico)
 		{
@@ -85,7 +87,7 @@ namespace TrasfusionaleApp.Views
                     {
                         if (socket == null)
                             socket = IO.Socket("http://192.168.125.14:3001");
-                        socket.Emit(ClassSock.eventUid,datiSocket);
+                        socket.Emit(eventUid, JsonConvert.SerializeObject(datiSocket));
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -146,7 +148,7 @@ namespace TrasfusionaleApp.Views
                     {
                         if (socket == null)
                             socket = IO.Socket("http://192.168.125.14:3001");
-                        socket.Emit(ClassSock.eventUid, datiSocket);
+                        socket.Emit(eventUid, JsonConvert.SerializeObject(datiSocket));
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -175,7 +177,7 @@ namespace TrasfusionaleApp.Views
 
         private async void vaiTrasfusionale(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Trasfusionale(infermiere,medico, socket));
+            await Navigation.PushAsync(new Trasfusionale(infermiere,medico, socket,datiSocket));
         }
 
     }

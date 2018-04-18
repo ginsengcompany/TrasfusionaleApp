@@ -9,5 +9,12 @@ namespace TrasfusionaleApp.Model
         public string temperatura { get; set; }
         public string frequenzaCardiaca { get; set; }
         public string pressioneArteriosa { get; set; }
+
+        public DatiSalute()
+        {
+            temperatura = "";
+            frequenzaCardiaca = "";
+            pressioneArteriosa = "";
+        }
     }
 }

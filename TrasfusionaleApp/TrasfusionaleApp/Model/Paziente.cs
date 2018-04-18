@@ -20,7 +20,6 @@ namespace TrasfusionaleApp.Model
         public int letto { get; set; }
         public string dataAssegnazioneTrasfusione { get; set; }
         private readonly string datiPaziente = "http://192.168.125.14:3000/paziente/datiPaziente";
-        public static readonly string eventSocketPaziente = "uidpaziente";
 
         public async Task<bool> prelevaDatiPaziente()
         {
@@ -39,6 +38,21 @@ namespace TrasfusionaleApp.Model
                 return true;
             }
         }
+
+        public Paziente()
+        {
+            uid = "";
+            nome = "";
+            cognome = "";
+            gruppo = "";
+            temperatura = "";
+            frequenzaCardiaca = "";
+            pressioneArteriosa = "";
+            rh = "";
+            reparto = "";
+            letto = 0;
+            dataAssegnazioneTrasfusione = "";
+    }
 
         public void copia(Paziente paziente)
         {
