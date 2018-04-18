@@ -39,7 +39,9 @@
 
                     </StackLayout>
                     <StackLayout BackgroundColor="LightGray" Grid.Column="1" Grid.Row="1" >
-                        <Switch x:Name="ispezioneEmocomponenti" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                        <Switch 
+                            x:Name="ispezioneEmocomponenti" IsToggled="False" 
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
 
 
@@ -66,7 +68,7 @@
                         HorizontalOptions="CenterAndExpand" 
                         HorizontalTextAlignment="Center" 
                         VerticalOptions="Center"
-                        Text="Identificazione del ricevente: verifica dei dati identificativi con quelli riportati sul braccialetto"></Label>
+                        Text="Identificazione del ricevente: verifica dei dati identificativi con quelli riportati sul braccialetto"/>
 
                     </StackLayout>
                     <StackLayout 
