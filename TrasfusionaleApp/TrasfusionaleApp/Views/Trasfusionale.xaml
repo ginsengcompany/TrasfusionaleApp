@@ -36,7 +36,7 @@
                 x:Name="editorNote"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
-                IsVisible="True"/>
+                IsVisible="False"/>
             <Button
                 x:Name="btnInviaDati"
                 Text="Invia dati"
