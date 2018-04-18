@@ -34,7 +34,6 @@
                 HorizontalOptions="CenterAndExpand"/>
             <Editor
                 x:Name="editorNote"
-                Text="Inserire note:"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 IsVisible="False"/>
