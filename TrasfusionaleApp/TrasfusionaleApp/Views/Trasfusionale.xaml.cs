@@ -31,7 +31,7 @@ namespace TrasfusionaleApp.Views
             this.socket = socket;
             this.datiSock = classSock;
 		}
-        /*
+        
 	    private async void animazioneGoccia()
 	    {
 	        while (animazione)
@@ -40,7 +40,7 @@ namespace TrasfusionaleApp.Views
 	            await goccia.TranslateTo(0, 0, 0);
 	        }
 	    }
-        */
+        
         private void inizia (object sender, EventArgs e)
         {
             datiSock.datiPrimaTrasfusione.frequenzaCardiaca = entryFrequenzaCardiaca.Text;
@@ -50,7 +50,8 @@ namespace TrasfusionaleApp.Views
             btnInizia.IsEnabled = false;
             btnFine.IsEnabled = true;
             animazione = true;
-            //animazioneGoccia();
+            goccia.IsVisible = true;
+            animazioneGoccia();
         }
 
         private async void fine (object sender, EventArgs e)
@@ -69,8 +70,9 @@ namespace TrasfusionaleApp.Views
             editorNote.IsVisible = true;
             btnFine.IsEnabled = false;
             operazioneTerminata = true;
-            btnInviaDati.IsEnabled = true;
-            //animazione = false;
+            btnInviaDati.IsVisible = true;
+            animazione = false;
+            goccia.IsVisible = false;
         }
 
         private async void inviaDati(object sender, EventArgs e)
@@ -103,8 +105,15 @@ namespace TrasfusionaleApp.Views
 
         private void controlloCampiEntry(object sender, FocusEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(entryPressioneArteriosa.Text) && !string.IsNullOrWhiteSpace(entryFrequenzaCardiaca.Text) && !string.IsNullOrWhiteSpace(entryTemperatura.Text))
+            if (!string.IsNullOrWhiteSpace(entryPressioneArteriosa.Text) && !string.IsNullOrWhiteSpace(entryFrequenzaCardiaca.Text) && !string.IsNullOrWhiteSpace(entryTemperatura.Text) && !btnInviaDati.IsVisible)
                 btnInizia.IsEnabled = true;
+            else if (!string.IsNullOrWhiteSpace(entryPressioneArteriosa.Text) && !string.IsNullOrWhiteSpace(entryFrequenzaCardiaca.Text) && !string.IsNullOrWhiteSpace(entryTemperatura.Text))
+                btnInviaDati.IsEnabled = true;
+            else
+            {
+                btnInizia.IsEnabled = false;
+                btnInviaDati.IsEnabled = false;
+            }
         }
 
         private async void annullaOperazione()
