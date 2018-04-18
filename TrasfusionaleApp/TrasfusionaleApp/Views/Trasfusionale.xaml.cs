@@ -81,6 +81,7 @@ namespace TrasfusionaleApp.Views
             datiSock.datiDopoTrasfusione.temperatura = entryTemperatura.Text;
             datiSock.datiDopoTrasfusione.pressioneArteriosa = entryPressioneArteriosa.Text;
             datiSock.datiDopoTrasfusione.frequenzaCardiaca = entryFrequenzaCardiaca.Text;
+            datiSock.note = editorNote.Text;
             socket.Emit(eventUpdateTrasfusione, JsonConvert.SerializeObject(datiSock));
             await DisplayAlert("Trasfusionale", "I dati sono stati inviati", "OK");
             socket.Disconnect();
