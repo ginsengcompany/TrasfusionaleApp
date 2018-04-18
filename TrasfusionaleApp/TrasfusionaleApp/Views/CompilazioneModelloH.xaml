@@ -97,13 +97,14 @@
                 <Grid RowSpacing="1" Padding="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                         <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"></Entry>
-                    <Button x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
+                    <Button  x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
             </StackLayout>
            
