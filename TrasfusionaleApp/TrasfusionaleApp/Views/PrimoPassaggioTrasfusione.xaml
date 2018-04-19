@@ -39,7 +39,7 @@
                     />
 
                 <Label
-                    Text="Codice provetta"
+                    Text="Codice Sacca"
                     TextColor="Black"
                     FontSize="Medium"
                     HorizontalOptions="Start"

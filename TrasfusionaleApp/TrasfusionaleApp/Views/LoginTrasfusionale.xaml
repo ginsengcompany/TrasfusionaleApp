@@ -54,7 +54,7 @@
 
                             <Image 
                            Grid.Row="0" 
-                           Margin="0,0,4,0"
+                           Margin="0,0,7,0"
                            WidthRequest="35"
                            HorizontalOptions="End"
                            Source="codescan.png">
@@ -97,7 +97,8 @@
                             <Image Source="eye.png" 
                            HorizontalOptions="End"
                            Grid.Row="0"
-                           WidthRequest="40">
+                           WidthRequest="40"
+                           Margin="0,0,7,0">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="mostraPassword"/>
                                 </Image.GestureRecognizers>

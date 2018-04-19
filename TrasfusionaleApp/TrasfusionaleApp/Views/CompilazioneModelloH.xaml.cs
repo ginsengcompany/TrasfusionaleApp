@@ -20,6 +20,7 @@ namespace TrasfusionaleApp.Views
 			InitializeComponent ();
 		    this.infermiere = operatore;
             this.modelloInf = new ModelloHcs();
+            Title = "Modello H infermiere";
 		}
 
 	    public CompilazioneModelloH(Operatore medico, Operatore infermiere, ModelloHcs modelloInf)
@@ -29,7 +30,9 @@ namespace TrasfusionaleApp.Views
 	        this.infermiere = infermiere;
 	        this.modelloInf = modelloInf;
 	        this.modelloMed = new ModelloHcs();
-	    }
+
+            Title = "Modello H Medico";
+        }
 
         private async void InvioDati(object sender, EventArgs e)
 	    {
