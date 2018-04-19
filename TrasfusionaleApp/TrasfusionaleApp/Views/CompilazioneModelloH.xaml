@@ -120,7 +120,8 @@
                                        Placeholder="Conferma password"  
                                        PlaceholderColor="Gray"
                                        TextColor="Black"  
-                                       FontAttributes="Bold">
+                                       FontAttributes="Bold"
+                                       IsPassword="True">
                     </model:CustomEntry>
                     <Button  x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
