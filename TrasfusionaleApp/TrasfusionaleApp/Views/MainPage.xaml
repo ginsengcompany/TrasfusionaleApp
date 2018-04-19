@@ -22,7 +22,7 @@
             <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
                 <xfx:XfxCardView CornerRadius="10" Elevation="10" >
                     <StackLayout>
-                        <Image Source="localizzazionecard.png">
+                        <Image Source="localizzazionecard.jpeg">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
                             </Image.GestureRecognizers>
@@ -34,7 +34,7 @@
             <StackLayout  Grid.Column="0" Grid.Row="1" Orientation="Vertical" >
                 <xfx:XfxCardView CornerRadius="10" Elevation="10">
                     <StackLayout>
-                        <Image Source="pretrasfusione_card.png">
+                        <Image Source="pretrasfusione_card.jpeg">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"/>
                             </Image.GestureRecognizers>
@@ -46,7 +46,7 @@
             <StackLayout  Grid.Column="0" Grid.Row="2" Orientation="Vertical">
                 <xfx:XfxCardView CornerRadius="10" Elevation="10">
                     <StackLayout>
-                        <Image Source="trasfusionecard.png">
+                        <Image Source="trasfusionecard.jpeg">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"/>
                             </Image.GestureRecognizers>

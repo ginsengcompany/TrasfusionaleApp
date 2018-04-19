@@ -211,40 +211,40 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\logoCardarelli1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\localizzazionecard.png" />
+    <AndroidResource Include="Resources\drawable\trasfusionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pretrasfusione_card.png" />
+    <AndroidResource Include="Resources\drawable\localizzazionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\trasfusionecard.png" />
+    <AndroidResource Include="Resources\drawable\pretrasfusione_card.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\localizzazionecard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\trasfusionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\pretrasfusione_card.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\localizzazionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\trasfusionecard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pretrasfusione_card.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\localizzazionecard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\trasfusionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\pretrasfusione_card.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\localizzazionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\trasfusionecard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pretrasfusione_card.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\localizzazionecard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\trasfusionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\pretrasfusione_card.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\localizzazionecard.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xxhdpi\trasfusionecard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pretrasfusione_card.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
