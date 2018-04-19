@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
              x:Class="TrasfusionaleApp.Views.CompilazioneModelloH" Title="Modello H">
    <ContentPage.Content>
         <StackLayout Spacing="0">
@@ -105,7 +106,22 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                        <Entry x:Name="entryConfermaPassword" Placeholder="Conferma password" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0"></Entry>
+                    <model:CustomEntry CornerRadius="18" 
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       x:Name="entryConfermaPassword"
+                                       HeightRequest="50"
+                                       BorderWidth="3"
+                                       IsCurvedCornersEnabled="True"  
+                                       BorderColor="#5195DD"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"   
+                                       Placeholder="Conferma password"  
+                                       PlaceholderColor="Gray"
+                                       TextColor="Black"  
+                                       FontAttributes="Bold">
+                    </model:CustomEntry>
                     <Button  x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
             </StackLayout>

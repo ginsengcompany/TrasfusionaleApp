@@ -2,82 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TrasfusionaleApp"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              x:Class="TrasfusionaleApp.MainPage" 
              Title="Home Page">
 
 
     <StackLayout Orientation="Vertical" >
+        <Grid  ColumnSpacing="0" Margin="2,10,2,0" RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
 
 
-        <ScrollView>
+            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <xfx:XfxCardView CornerRadius="10" Elevation="10" >
+                    <StackLayout>
+                        <Image Source="bg_localizza_paziente">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </xfx:XfxCardView>
+            </StackLayout>
 
-            <Grid 
-                ColumnSpacing="0"
-                  VerticalOptions="FillAndExpand" Margin="2,10,0,0"
-                  Padding="2" 
-            RowSpacing="10"
-            >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
+            <StackLayout  Grid.Column="0" Grid.Row="1" Orientation="Vertical" >
+                <xfx:XfxCardView CornerRadius="10" Elevation="10">
+                    <StackLayout>
+                        <Image Source="bg_pretrasfusionale">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </xfx:XfxCardView>
+            </StackLayout>
 
-
-                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start">
-                    <Image Source="geo.png"  
-                               HeightRequest="150" HorizontalOptions="Start">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="IndividuaIlPaziente"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label
-                        Text="Localizza paziente"
-                        VerticalOptions="Center"
-                        VerticalTextAlignment="Center"
-                        FontSize="Medium" />
-                </StackLayout>
-
-
-
-                <StackLayout  Grid.Column="0" Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Start">
-                    <Image Source="provetta.png" HeightRequest="150" HorizontalOptions="Start">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="vaiPaginaPretrasfusionale"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label
-                            Text="Pre-trasfusionale"
-                            FontSize="Medium"
-                        VerticalOptions="Center"
-                        VerticalTextAlignment="Center"/>
-                </StackLayout>
-
-                <StackLayout 
-                                 Grid.Column="0" 
-                                 Grid.Row="2" 
-                    Orientation="Horizontal" HorizontalOptions="Start">
-                    <Image Source="sacca.png" 
-                               HeightRequest="150" HorizontalOptions="Start">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label
-                            Text="Trasfusionale"
-                            FontSize="Medium"
-                        VerticalOptions="Center"
-                        VerticalTextAlignment="Center"
-                          />
-                </StackLayout>
-
-
-            </Grid>
-        </ScrollView>
-
+            <StackLayout  Grid.Column="0" Grid.Row="2" Orientation="Vertical">
+                <xfx:XfxCardView CornerRadius="10" Elevation="10">
+                    <StackLayout>
+                        <Image Source="bg_trasfusione">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="VaiInPaginaTrasfusionale"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </xfx:XfxCardView>
+            </StackLayout>
+        </Grid>
     </StackLayout>
-
 </ContentPage>
