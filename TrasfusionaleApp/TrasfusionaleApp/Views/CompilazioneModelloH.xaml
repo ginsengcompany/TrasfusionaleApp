@@ -96,7 +96,7 @@
                     </StackLayout>
                 </Grid>
             </ScrollView>
-            <StackLayout>
+            <StackLayout BackgroundColor="White">
                 <Grid RowSpacing="1" Padding="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -107,6 +107,7 @@
                     </Grid.ColumnDefinitions>
 
                     <model:CustomEntry CornerRadius="18" 
+                                       Margin="0,0,0,10"
                                        Grid.Row="0"
                                        Grid.Column="0"
                                        x:Name="entryConfermaPassword"
@@ -121,7 +122,8 @@
                                        PlaceholderColor="Gray"
                                        TextColor="Black"  
                                        FontAttributes="Bold"
-                                       IsPassword="True">
+                                       IsPassword="True" 
+                                       >
                     </model:CustomEntry>
                     <Button  x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
