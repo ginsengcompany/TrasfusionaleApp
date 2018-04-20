@@ -19,7 +19,7 @@
                 <Frame  BackgroundColor="#97BCE3" 
                         CornerRadius="15"
                         HasShadow="True"
-                        Margin="20,50,20,40">
+                        Margin="20,30,20,40">
                     <StackLayout VerticalOptions="CenterAndExpand">
                         <Label Text="LOGIN" 
                                HorizontalOptions="CenterAndExpand" 
