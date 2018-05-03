@@ -30,7 +30,7 @@ namespace TrasfusionaleApp.Views
 	        this.infermiere = infermiere;
 	        this.modelloInf = modelloInf;
 	        this.modelloMed = new ModelloHcs();
-
+            entryConfermaPassword.IsVisible = false;
             Title = "Modello H Medico";
         }
 
@@ -52,25 +52,20 @@ namespace TrasfusionaleApp.Views
             }
             else
 	        {
-                if (entryConfermaPassword.Text == medico.password)
-                {
-                    modelloMed.compatibilitaImmunologica = compatibilitaImmunologica.IsToggled;
-                    modelloMed.identificazioneRiceventeRichiesta = identificazioneRiceventeRichiesta.IsToggled;
-                    modelloMed.identificazioneRiceventeScan = identificazioneRiceventeScan.IsToggled;
-                    modelloMed.ispezioneEmocomponenti = ispezioneEmocomponenti.IsToggled;
-                    modelloMed.verificaOgniUnitaDaTrasfondere = verificaOgniUnitaDaTrasfondere.IsToggled;
-                    InvioModelliCompilati modelliCompilati = new InvioModelliCompilati(modelloInf, modelloMed, infermiere, medico);
-                    var result = await modelliCompilati.inviaDati();
-                    if (result)
-                        await Navigation.PushAsync(new PrimoPassaggioTrasfusione(infermiere, medico));
-                    else
-                    {
-                        await DisplayAlert("Attenzione", "I modelli compilati non risultano correttamente idonei per proseguire nel processo trasfusionale", "OK");
-                        App.Current.MainPage = new NavigationPage(new MainPage(infermiere));
-                    }
-                }
+                modelloMed.compatibilitaImmunologica = compatibilitaImmunologica.IsToggled;
+                modelloMed.identificazioneRiceventeRichiesta = identificazioneRiceventeRichiesta.IsToggled;
+                modelloMed.identificazioneRiceventeScan = identificazioneRiceventeScan.IsToggled;
+                modelloMed.ispezioneEmocomponenti = ispezioneEmocomponenti.IsToggled;
+                modelloMed.verificaOgniUnitaDaTrasfondere = verificaOgniUnitaDaTrasfondere.IsToggled;
+                InvioModelliCompilati modelliCompilati = new InvioModelliCompilati(modelloInf, modelloMed, infermiere, medico);
+                var result = await modelliCompilati.inviaDati();
+                if (result)
+                    await Navigation.PushAsync(new PrimoPassaggioTrasfusione(infermiere, medico));
                 else
-                    await DisplayAlert("Attenzione", "password non corretta", "ok");
+                {
+                    await DisplayAlert("Attenzione", "I modelli compilati non risultano correttamente idonei per proseguire nel processo trasfusionale", "OK");
+                    App.Current.MainPage = new NavigationPage(new MainPage(infermiere));
+                }
             }
 	    }
 

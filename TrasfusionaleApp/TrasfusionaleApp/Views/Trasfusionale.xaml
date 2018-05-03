@@ -29,7 +29,6 @@
                 CornerRadius="18" x:Name="entryFrequenzaCardiaca" TextColor="Black" FontAttributes="Bold"
                 Placeholder="Inserire Frequenza cardiaca" PlaceholderColor="Gray" Unfocused="controlloCampiEntry"
                 Keyboard="Numeric" BorderColor="#5195DD" IsCurvedCornersEnabled="True" BorderWidth="3"/>
-
             <Button
                 Text="Inizia trasfusione"
                 TextColor="White"
@@ -38,14 +37,6 @@
                 x:Name="btnInizia"
                 IsEnabled="False"
                 Clicked="inizia" />
-            <Button
-                Text="Fine trasfusione"
-                TextColor="White"
-                BackgroundColor="#5195dd"
-                BorderRadius="10"
-                x:Name="btnFine"
-                IsEnabled="False"
-                Clicked="fine" />
             <Label
                 x:Name="labelNote"
                 Text="Note"
@@ -65,16 +56,6 @@
                 BorderColor="#5195DD"
                 IsCurvedCornersEnabled="True"
                 BorderWidth="3"/>
-            <Button
-                x:Name="btnInviaDati"
-                TextColor="White"
-                BackgroundColor="#5195dd"
-                BorderRadius="10"
-                Text="Invia dati"
-                Clicked="inviaDati"
-                IsVisible="False"
-                IsEnabled="False"/>
-            <Image x:Name="goccia" Source="goccia.png" HeightRequest="60" IsVisible="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

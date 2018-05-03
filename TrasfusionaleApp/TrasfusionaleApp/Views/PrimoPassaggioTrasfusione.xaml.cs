@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,18 +19,16 @@ namespace TrasfusionaleApp.Views
 	    private bool scanSaccaEseguita = false, scanPazienteEseguita=false;
 	    private Paziente paziente;
 	    private bool pazienteScan = false, saccaScan = false;
-        private Socket socket;
-        private ClassSock datiSocket;
-        private readonly string eventUid = "uid";
+        private DatiTrasfusione datiTrasfusione;
 
         public PrimoPassaggioTrasfusione (Operatore infermiere, Operatore medico)
 		{
 			InitializeComponent ();
             this.infermiere = infermiere;
             this.medico = medico;
-            datiSocket = new ClassSock();
-            datiSocket.uidInfermiere = infermiere.uid;
-            datiSocket.uidMedico = medico.uid;
+            datiTrasfusione = new DatiTrasfusione();
+            datiTrasfusione.uidInfermiere = infermiere.uid;
+            datiTrasfusione.uidMedico = medico.uid;
 		}
 
 	    private async void ScannerizzaSacca(object sender, EventArgs e)
@@ -81,13 +78,10 @@ namespace TrasfusionaleApp.Views
                 if (await sacca.InviaSacca())
                 {
                     labelSacca.Text = sacca.uid;
-                    datiSocket.uidSacca = sacca.uid;
+                    datiTrasfusione.uidSacca = sacca.uid;
                     saccaScan = true;
                     if (pazienteScan && saccaScan)
                     {
-                        if (socket == null)
-                            socket = IO.Socket("http://192.168.125.14:3001");
-                        socket.Emit(eventUid, JsonConvert.SerializeObject(datiSocket));
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -99,7 +93,7 @@ namespace TrasfusionaleApp.Views
                             btnTrasfusione.IsEnabled = false;
                         }
                     }
-                   else
+                    else
                         btnTrasfusione.IsEnabled = false;
                 }
                 else
@@ -126,10 +120,7 @@ namespace TrasfusionaleApp.Views
         {
             var response = await DisplayAlert("ATTENZIONE", "Sei sicuro di voler annullare l'operazione?", "SI", "No");
             if (response)
-            {
-                socket.Disconnect();
                 App.Current.MainPage = new NavigationPage(new MainPage(infermiere));
-            }
         }
 
         private async void controllaScanPaziente()
@@ -143,13 +134,12 @@ namespace TrasfusionaleApp.Views
                     CognomePaziente.Text = paziente.cognome;
                     RepartoPaziente.Text = paziente.reparto;
                     LettoPaziente.Text = paziente.letto.ToString();
-                    datiSocket.uidPaziente = paziente.uid;
+                    datiTrasfusione.uidPaziente = paziente.uid;
+                    datiTrasfusione.letto = paziente.letto;
+                    datiTrasfusione.reparto = paziente.reparto;
                     pazienteScan = true;
                     if (pazienteScan && saccaScan)
                     {
-                        if (socket == null)
-                            socket = IO.Socket("http://192.168.125.14:3001");
-                        socket.Emit(eventUid, JsonConvert.SerializeObject(datiSocket));
                         if (sacca.uidPaziente == paziente.uid)
                         {
                             await DisplayAlert("Pre-Trasfusionale", "Associazione corretta", "OK");
@@ -178,7 +168,7 @@ namespace TrasfusionaleApp.Views
 
         private async void vaiTrasfusionale(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Trasfusionale(infermiere,medico, socket,datiSocket));
+            await Navigation.PushAsync(new Trasfusionale(infermiere,medico,datiTrasfusione));
         }
 
     }
