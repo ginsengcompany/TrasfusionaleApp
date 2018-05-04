@@ -16,6 +16,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
 
@@ -54,6 +55,8 @@
                     </StackLayout>
                 </xfx:XfxCardView>
             </StackLayout>
+
+            <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="Center" Text="Lista trasfusionali" Clicked="vaiPaginaListaTrasfusionali"/>
         </Grid>
     </StackLayout>
 </ContentPage>

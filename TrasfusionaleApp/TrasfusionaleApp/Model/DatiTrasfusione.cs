@@ -9,7 +9,7 @@ namespace TrasfusionaleApp.Model
     public class DatiTrasfusione
     {
         public string uidInfermiere { get; set; }
-        public string uidPaziente { get; set; }
+        public Paziente paziente { get; set; }
         public string uidSacca { get; set; }
         public string uidMedico { get; set; }
         public string note { get; set; }
@@ -18,13 +18,13 @@ namespace TrasfusionaleApp.Model
         public DatiSalute datiPrimaTrasfusione { get; set; }
         public DatiSalute datiDopoTrasfusione { get; set; }
         private string restInvioDatiInizioTrasfusione = "http://192.168.125.14:3000/trasfusioni/inserisciTrasfusione";
-        private string restListTrasfusioniForReparto = "http://192.168.125.14:3000/trasfusioni/listaPerReparto";
+        public static readonly string restListTrasfusioniForReparto = "http://192.168.125.14:3000/trasfusioni/listaPerReparto";
         private string restInvioDatiFineTrasfusione = "http://192.168.125.14:3000/trasfusioni/aggiornamentoDopoLaTrasfusione";
 
         public DatiTrasfusione()
         {
             uidInfermiere = "";
-            uidPaziente = "";
+            paziente = new Paziente();
             uidSacca = "";
             uidMedico = "";
             note = "";

@@ -26,9 +26,9 @@ namespace TrasfusionaleApp.Views
         
         private async void inizia (object sender, EventArgs e)
         {
-            datiTrasfusione.datiDopoTrasfusione.temperatura = entryTemperatura.Text;
-            datiTrasfusione.datiDopoTrasfusione.pressioneArteriosa = entryPressioneArteriosa.Text;
-            datiTrasfusione.datiDopoTrasfusione.frequenzaCardiaca = entryFrequenzaCardiaca.Text;
+            datiTrasfusione.datiPrimaTrasfusione.temperatura = entryTemperatura.Text;
+            datiTrasfusione.datiPrimaTrasfusione.pressioneArteriosa = entryPressioneArteriosa.Text;
+            datiTrasfusione.datiPrimaTrasfusione.frequenzaCardiaca = entryFrequenzaCardiaca.Text;
             var response = await datiTrasfusione.invioDatiInizioTrasfusione();
             if (response)
                 App.Current.MainPage = new NavigationPage(new MainPage(infermiere));

@@ -16,6 +16,7 @@ namespace TrasfusionaleApp.Model
         public string frequenzaCardiaca { get; set; }
         public string pressioneArteriosa { get; set; }
         public string rh { get; set; }
+        public string idReparto { get; set; }
         public string reparto { get; set; }
         public int letto { get; set; }
         public string dataAssegnazioneTrasfusione { get; set; }
@@ -60,6 +61,7 @@ namespace TrasfusionaleApp.Model
             this.nome = paziente.nome;
             this.cognome = paziente.cognome;
             this.gruppo = paziente.gruppo;
+            this.idReparto = paziente.idReparto;
             this.reparto = paziente.reparto;
             this.rh = paziente.rh;
             this.letto = paziente.letto;

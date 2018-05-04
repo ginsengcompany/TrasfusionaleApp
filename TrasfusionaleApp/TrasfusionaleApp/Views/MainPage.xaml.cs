@@ -34,5 +34,10 @@ namespace TrasfusionaleApp
 	    {
 	        await Navigation.PushAsync(new PreTrasfusionale(operatore));
 	    }
+
+        private async void vaiPaginaListaTrasfusionali(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListaTrasfusionale(operatore));
+        }
     }
 }

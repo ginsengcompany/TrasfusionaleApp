@@ -134,9 +134,7 @@ namespace TrasfusionaleApp.Views
                     CognomePaziente.Text = paziente.cognome;
                     RepartoPaziente.Text = paziente.reparto;
                     LettoPaziente.Text = paziente.letto.ToString();
-                    datiTrasfusione.uidPaziente = paziente.uid;
-                    datiTrasfusione.letto = paziente.letto;
-                    datiTrasfusione.reparto = paziente.reparto;
+                    datiTrasfusione.paziente = paziente;
                     pazienteScan = true;
                     if (pazienteScan && saccaScan)
                     {
