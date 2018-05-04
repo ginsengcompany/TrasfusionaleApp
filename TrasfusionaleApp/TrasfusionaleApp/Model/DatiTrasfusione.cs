@@ -8,28 +8,27 @@ namespace TrasfusionaleApp.Model
 {
     public class DatiTrasfusione
     {
+        public string _id { get; set; }
         public string uidInfermiere { get; set; }
         public Paziente paziente { get; set; }
         public string uidSacca { get; set; }
         public string uidMedico { get; set; }
         public string note { get; set; }
-        public string reparto { get; set; }
-        public int letto { get; set; }
         public DatiSalute datiPrimaTrasfusione { get; set; }
         public DatiSalute datiDopoTrasfusione { get; set; }
         private string restInvioDatiInizioTrasfusione = "http://192.168.125.14:3000/trasfusioni/inserisciTrasfusione";
         public static readonly string restListTrasfusioniForReparto = "http://192.168.125.14:3000/trasfusioni/listaPerReparto";
         private string restInvioDatiFineTrasfusione = "http://192.168.125.14:3000/trasfusioni/aggiornamentoDopoLaTrasfusione";
+        public static readonly string restFineTrasfusione = "http://192.168.125.14:3000/trasfusioni/fineTrasfusione";
 
         public DatiTrasfusione()
         {
+            _id = "";
             uidInfermiere = "";
             paziente = new Paziente();
             uidSacca = "";
             uidMedico = "";
             note = "";
-            reparto = "";
-            letto = 0;
             datiPrimaTrasfusione = new DatiSalute();
             datiDopoTrasfusione = new DatiSalute();
         }

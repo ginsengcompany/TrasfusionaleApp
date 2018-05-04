@@ -3,24 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TrasfusionaleApp"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             x:Class="TrasfusionaleApp.MainPage" 
+             x:Class="TrasfusionaleApp.MainPage"
              Title="Home Page">
+    <ScrollView>
 
+        <StackLayout>
 
-    <StackLayout Orientation="Vertical" >
-        <Grid  ColumnSpacing="0" Margin="2,10,2,0" RowSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-
-
-            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
                 <xfx:XfxCardView CornerRadius="10" Elevation="10" >
                     <StackLayout>
                         <Image Source="localizzazionecard.jpeg">
@@ -30,9 +18,7 @@
                         </Image>
                     </StackLayout>
                 </xfx:XfxCardView>
-            </StackLayout>
 
-            <StackLayout  Grid.Column="0" Grid.Row="1" Orientation="Vertical" >
                 <xfx:XfxCardView CornerRadius="10" Elevation="10">
                     <StackLayout>
                         <Image Source="pretrasfusione_card.jpeg">
@@ -42,9 +28,7 @@
                         </Image>
                     </StackLayout>
                 </xfx:XfxCardView>
-            </StackLayout>
 
-            <StackLayout  Grid.Column="0" Grid.Row="2" Orientation="Vertical">
                 <xfx:XfxCardView CornerRadius="10" Elevation="10">
                     <StackLayout>
                         <Image Source="trasfusionecard.jpeg">
@@ -54,9 +38,16 @@
                         </Image>
                     </StackLayout>
                 </xfx:XfxCardView>
-            </StackLayout>
 
-            <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" VerticalOptions="Center" Text="Lista trasfusionali" Clicked="vaiPaginaListaTrasfusionali"/>
-        </Grid>
-    </StackLayout>
+                <xfx:XfxCardView CornerRadius="10" Elevation="10">
+                    <StackLayout>
+                        <Image Source="listatrasfusionicard.jpeg">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="vaiPaginaListaTrasfusionali"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </xfx:XfxCardView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

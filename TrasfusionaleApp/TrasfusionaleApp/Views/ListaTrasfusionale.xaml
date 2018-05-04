@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrasfusionaleApp.Views.ListaTrasfusionale"
              xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
+             xmlns:local="clr-namespace:TrasfusionaleApp"
              Title="Lista dei processi in corso">
     <ContentPage.Content>
         <StackLayout>
             <Picker x:Name="pickerReparti" BackgroundColor="White" Title="Scegli il reparto" ItemsSource="{Binding _reparti}" ItemDisplayBinding="{Binding nomeReparto}" SelectedIndexChanged="sceltaReparto"/>
-            <ListView ItemsSource="{Binding _trasfusionali}" SeparatorColor="Gray" BackgroundColor="White" HasUnevenRows="True">
+            <ListView x:Name="lst" ItemsSource="{Binding _trasfusionali}" SeparatorColor="Gray" BackgroundColor="White" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <model:ExtendedViewCell SelectedBackgroundColor="White">
                             <ViewCell.View>
-                                <StackLayout>
+                                <StackLayout x:Name="Item">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -30,7 +31,8 @@
                                         <Label Grid.Row="0" Grid.Column="2" Text="{Binding paziente.cognome}" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
                                         <Label Grid.Row="0" Grid.Column="3" Text="Letto:" VerticalOptions="Center" TextColor="#5195dd" FontSize="Medium"/>
                                         <Label Grid.Row="0" Grid.Column="4" Text="{Binding paziente.letto}" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
-                                        <Button Grid.Row="0" Grid.Column="5" Text="Termina trasfusione" VerticalOptions="Center" BackgroundColor="#5195dd" TextColor="White"/>
+                                        <Button Grid.Row="0" Grid.Column="5" Text="Termina trasfusione" VerticalOptions="Center" BackgroundColor="#5195dd" TextColor="White"
+                                                BindingContext="{Binding Source={x:Reference lst},Path=BindingContext}" Command="{Binding _terminaTrasfusione}" CommandParameter="{Binding Source={x:Reference Item},Path=BindingContext}"/>
                                     </Grid>
                                 </StackLayout>
                             </ViewCell.View>
