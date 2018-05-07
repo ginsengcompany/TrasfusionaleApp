@@ -10,6 +10,7 @@ namespace TrasfusionaleApp.Model
     {
         public string _id { get; set; }
         public string uidInfermiere { get; set; }
+        public string timerTrasfusione { get; set; }
         public Paziente paziente { get; set; }
         public string uidSacca { get; set; }
         public string uidMedico { get; set; }
@@ -26,6 +27,7 @@ namespace TrasfusionaleApp.Model
         {
             _id = "";
             uidInfermiere = "";
+            timerTrasfusione = "";
             paziente = new Paziente();
             uidSacca = "";
             inizioTrasfusione = "";
@@ -33,6 +35,11 @@ namespace TrasfusionaleApp.Model
             note = "";
             datiPrimaTrasfusione = new DatiSalute();
             datiDopoTrasfusione = new DatiSalute();
+        }
+
+        public async void AvvioTimer()
+        {
+            
         }
 
         public async Task<bool> invioDatiInizioTrasfusione()
