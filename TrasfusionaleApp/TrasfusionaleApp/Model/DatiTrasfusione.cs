@@ -14,6 +14,7 @@ namespace TrasfusionaleApp.Model
         public string uidSacca { get; set; }
         public string uidMedico { get; set; }
         public string note { get; set; }
+        public string inizioTrasfusione { get; set; }
         public DatiSalute datiPrimaTrasfusione { get; set; }
         public DatiSalute datiDopoTrasfusione { get; set; }
         private string restInvioDatiInizioTrasfusione = "http://192.168.125.14:3000/trasfusioni/inserisciTrasfusione";
@@ -27,6 +28,7 @@ namespace TrasfusionaleApp.Model
             uidInfermiere = "";
             paziente = new Paziente();
             uidSacca = "";
+            inizioTrasfusione = "";
             uidMedico = "";
             note = "";
             datiPrimaTrasfusione = new DatiSalute();
