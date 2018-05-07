@@ -69,7 +69,7 @@
                                         </StackLayout>
                                         <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
                                              <Label Text="Timer:" TextColor="#5195dd" FontSize="Medium" VerticalOptions="Center"/>
-                                            <Label  Text="00:00" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center"/>
+                                            <Label  Text="{Binding timerTrasfusione}" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center"/>
                                         </StackLayout>
                                         <Button Grid.Row="2" 
                                                 Grid.ColumnSpan="3" 
