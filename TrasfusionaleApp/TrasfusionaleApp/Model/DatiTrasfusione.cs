@@ -50,5 +50,20 @@ namespace TrasfusionaleApp.Model
                 return true;
             }
         }
+
+        public async Task<bool> invioDatiFineTrasfusione()
+        {
+            REST<DatiTrasfusione, string> rEST = new REST<DatiTrasfusione, string>();
+            List<Header> headers = new List<Header>();
+            headers.Add(new Header("access-token",App.Current.Properties["access-token"].ToString()));
+            var res = await rEST.PostJson(restInvioDatiFineTrasfusione,this,headers);
+            if (rEST.responseMessage == System.Net.HttpStatusCode.OK)
+            {
+                await App.Current.MainPage.DisplayAlert("Dati inviati", "I dati sono stati inviati correttamente", "OK");
+                return true;
+            }
+            await App.Current.MainPage.DisplayAlert("Dati non inviati",rEST.warning,"OK");
+            return false;
+        }
     }
 }

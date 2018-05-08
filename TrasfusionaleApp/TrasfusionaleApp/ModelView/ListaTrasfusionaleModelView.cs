@@ -99,7 +99,7 @@ namespace TrasfusionaleApp.ModelView
                 headers.Add(new Header("_id", item._id));
                 var response = await rEST.getString(DatiTrasfusione.restFineTrasfusione, headers);
                 if (rEST.responseMessage == System.Net.HttpStatusCode.OK)
-                    await App.Current.MainPage.Navigation.PushAsync(new FineTrasfusione());
+                    await App.Current.MainPage.Navigation.PushAsync(new FineTrasfusione(item, operatore));
             }
         }
     }
