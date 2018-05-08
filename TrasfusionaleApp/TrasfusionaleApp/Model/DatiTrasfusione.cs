@@ -80,23 +80,28 @@ namespace TrasfusionaleApp.Model
             if (secTrasfu > secAt)
             {
                 secAt = secAt + 60;
-                secondi = secAt - secTrasfu;
-                if (secondi < 10)
-                    puntiniSecondi = ":0";
                 minAt = minAt - 1;
             }
+            secondi = secAt - secTrasfu;
+            if (secondi < 10)
+                puntiniSecondi = ":0";
             if (minTrasfu > minAt)
             {
                 minAt = minAt + 60;
-                minuti = minAt - minTrasfu;
-                if (minuti < 10)
-                    puntiniMinuti = ":0";
                 oraAt = oraAt - 1;
+            }
+            minuti = minAt - minTrasfu;
+            if (minuti < 10)
+                puntiniMinuti = ":0";
+
+            if (oraTrasfu > oraAt || oraAt < 0)
+            {
+                oraAt = oraAt + 24;
             }
 
             ore = oraAt - oraTrasfu;
-            if(minuti<10)
-                TimerTrasfusione = ore.ToString() + puntiniMinuti + minuti.ToString() + puntiniSecondi + secondi.ToString();
+
+            TimerTrasfusione = ore.ToString() + puntiniMinuti + minuti.ToString() + puntiniSecondi + secondi.ToString();
             
         }
 

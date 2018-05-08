@@ -65,6 +65,8 @@ namespace TrasfusionaleApp.ModelView
         {
             REST<Reparto, DatiTrasfusione> rEST = new REST<Reparto, DatiTrasfusione>();
             List<Header> headers = new List<Header>();
+            if(_trasfusionali!=null)
+                _trasfusionali = new List<DatiTrasfusione>();
             headers.Add(new Header("access-token", App.Current.Properties["access-token"].ToString()));
             headers.Add(new Header("reparto", reparti[index].id));
             var response = await rEST.GetListJson(DatiTrasfusione.restListTrasfusioniForReparto,headers);
