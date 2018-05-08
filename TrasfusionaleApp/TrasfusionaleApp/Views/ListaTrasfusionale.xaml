@@ -17,22 +17,72 @@
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Grid.Row="0" Grid.Column="0" Text="Paziente:" VerticalOptions="Center" TextColor="#5195dd" FontSize="Medium"/>
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding paziente.nome}" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
-                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding paziente.cognome}" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
-                                        <Label Grid.Row="0" Grid.Column="3" Text="Letto:" VerticalOptions="Center" TextColor="#5195dd" FontSize="Medium"/>
-                                        <Label Grid.Row="0" Grid.Column="4" Text="{Binding paziente.letto}" VerticalOptions="Center" TextColor="Black" FontSize="Medium"/>
-                                        <Button Grid.Row="0" Grid.Column="5" Text="Termina trasfusione" VerticalOptions="Center" BackgroundColor="#5195dd" TextColor="White"
-                                                BindingContext="{Binding Source={x:Reference lst},Path=BindingContext}" Command="{Binding _terminaTrasfusione}" CommandParameter="{Binding Source={x:Reference Item},Path=BindingContext}"/>
+                                        
+                                        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalOptions="Start">
+                                            <Label Text="Paziente:" VerticalOptions="Center" TextColor="#5195dd" FontSize="Medium"/>
+                                            <Label Text="{Binding paziente.nome}"
+                                                   VerticalOptions="Center" 
+                                                   HorizontalTextAlignment="Start"
+                                                   TextColor="Black" 
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Start"
+                                                   />
+                                            <Label Text="{Binding paziente.cognome}"
+                                                   VerticalOptions="Center" 
+                                                   TextColor="Black" 
+                                                   HorizontalOptions="Start"
+                                                   FontSize="Medium"
+                                                   />
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                                            <Label Text="Letto:" 
+                                                   VerticalOptions="Start" 
+                                                   TextColor="#5195dd" 
+                                                   FontSize="Medium"
+                                                   />
+                                            <Label Text="{Binding paziente.letto}" 
+                                                   VerticalOptions="Start" 
+                                                   TextColor="Black" 
+                                                   FontSize="Medium"
+                                                   />
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                            <Label Text="Ora inizio" 
+                                                   TextColor="#5195dd" 
+                                                   FontSize="Medium" 
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   />
+                                            <Label Text="{Binding inizioTrasfusione}" 
+                                                   FontAttributes="Bold" 
+                                                   FontSize="Medium"
+                                                   HorizontalOptions="Start"
+                                                   />
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                                             <Label Text="Timer:" TextColor="#5195dd" FontSize="Medium" VerticalOptions="Center"/>
+                                            <Label  Text="{Binding TimerTrasfusione, Mode=TwoWay}" FontAttributes="Bold" FontSize="Large" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <Button Grid.Row="2" 
+                                                Grid.ColumnSpan="3" 
+                                                Grid.Column="0" 
+                                                Text="Termina trasfusione" 
+                                                VerticalOptions="Center" 
+                                                Margin="5" 
+                                                CornerRadius="10" 
+                                                BackgroundColor="#5195dd" 
+                                                TextColor="White"
+                                                BindingContext="{Binding Source={x:Reference lst},Path=BindingContext}" 
+                                                Command="{Binding _terminaTrasfusione}" 
+                                                CommandParameter="{Binding Source={x:Reference Item},Path=BindingContext}"/>
                                     </Grid>
                                 </StackLayout>
                             </ViewCell.View>

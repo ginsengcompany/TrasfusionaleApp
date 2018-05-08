@@ -69,11 +69,20 @@ namespace TrasfusionaleApp.ModelView
             headers.Add(new Header("reparto", reparti[index].id));
             var response = await rEST.GetListJson(DatiTrasfusione.restListTrasfusioniForReparto,headers);
             if (rEST.responseMessage == System.Net.HttpStatusCode.OK)
+            {
                 _trasfusionali = response;
+                foreach(var i in _trasfusionali)
+                {
+                    i.CalcoloTimer();
+                    i.AvvioTimer();
+                }
+            }
             else if (rEST.responseMessage == System.Net.HttpStatusCode.NotFound)
                 await App.Current.MainPage.DisplayAlert("Attenzione","Nessun processo in esecuzione nel reparto scelto","OK");
             else
                 await App.Current.MainPage.DisplayAlert(rEST.responseMessage.ToString(), rEST.warning, "OK");
+
+
         }
 
         private async void recuperaReparti()
