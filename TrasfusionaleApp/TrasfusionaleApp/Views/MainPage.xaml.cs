@@ -26,7 +26,18 @@ namespace TrasfusionaleApp
 
 	    private async void VaiInPaginaTrasfusionale(object sender, EventArgs e)
 	    {
-	        await Navigation.PushAsync(new LoginTrasfusionale());
+	        await Navigation.PushAsync(new CompilazioneModelloH(operatore));
+
 	    }
-	}
+
+	    private async void vaiPaginaPretrasfusionale(object sender, EventArgs e)
+	    {
+	        await Navigation.PushAsync(new PreTrasfusionale(operatore));
+	    }
+
+        private async void vaiPaginaListaTrasfusionali(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListaTrasfusionale(operatore));
+        }
+    }
 }

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
+             x:Class="TrasfusionaleApp.Views.CompilazioneModelloH" Title="Modello H">
+   <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Grid RowSpacing="1" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout  BackgroundColor="White"  Grid.Row="0" Grid.Column="0" Padding="20">
+                        <Label 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalOptions="Center"
+                        Text="Controllo della compatibilità immunologica teorica confrontando idati presenti su ogni singola unità con quelli della richiesta, refertodi gruppo sanguigno e le attestazioni di compatibilità delle unità con il paziente"></Label>
+
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0" >
+                        <Switch x:Name="compatibilitaImmunologica" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                    </StackLayout>
+
+                    <StackLayout  BackgroundColor="LightGray"  Grid.Row="1" Grid.Column="0" Padding="20">
+                        <Label 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalOptions="Center"
+                        Text="Ispezione unità di emocomponenti per la presenza di anomalie"></Label>
+
+                    </StackLayout>
+                    <StackLayout BackgroundColor="LightGray" Grid.Column="1" Grid.Row="1" >
+                        <Switch 
+                            x:Name="ispezioneEmocomponenti" IsToggled="False" 
+                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+
+
+                    <StackLayout  BackgroundColor="White"  Grid.Row="2" Grid.Column="0" Padding="20">
+                        <Label 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalOptions="Center"
+                        Text="Identificazione del ricevente: richiesta al paziente dei propri dati identificativi: cognome, nome e data di nascita"></Label>
+
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="2" >
+                        <Switch  x:Name="identificazioneRiceventeRichiesta" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                    </StackLayout>
+
+
+
+                    <StackLayout  
+                        BackgroundColor="LightGray"  
+                        Grid.Row="3" 
+                        Grid.Column="0" 
+                        Padding="20">
+                        <Label 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalOptions="Center"
+                        Text="Identificazione del ricevente: verifica dei dati identificativi con quelli riportati sul braccialetto"/>
+
+                    </StackLayout>
+                    <StackLayout 
+                        BackgroundColor="LightGray" 
+                        Grid.Column="1" 
+                        Grid.Row="3" >
+                        <Switch  
+                            IsToggled="False"
+                            x:Name="identificazioneRiceventeScan"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"></Switch>
+                    </StackLayout> 
+                    
+                    <StackLayout  BackgroundColor="White"  Grid.Row="4" Grid.Column="0" Padding="20">
+                        <Label 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalOptions="Center"
+                        Text="Identificazione del ricevente: verifica dei dati identificativi con quelli riportati su ogni singola unità da trasfondere"></Label>
+
+                    </StackLayout>
+                    <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="4" >
+                        <Switch x:Name="verificaOgniUnitaDaTrasfondere" IsToggled="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Switch>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+            <StackLayout BackgroundColor="White">
+                <Grid RowSpacing="1" Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <model:CustomEntry CornerRadius="18" 
+                                       Margin="0,0,0,10"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       x:Name="entryConfermaPassword"
+                                       HeightRequest="50"
+                                       BorderWidth="3"
+                                       IsCurvedCornersEnabled="True"  
+                                       BorderColor="#5195DD"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"   
+                                       Placeholder="Conferma password"  
+                                       PlaceholderColor="Gray"
+                                       TextColor="Black"  
+                                       FontAttributes="Bold"
+                                       IsPassword="True" 
+                                       >
+                    </model:CustomEntry>
+                    <Button  x:Name="btnConferma" Text="conferma" Clicked="InvioDati" BorderRadius="10" TextColor="White" BackgroundColor="#5195dd" Grid.Column="0" Grid.Row="1"></Button>
+                </Grid>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

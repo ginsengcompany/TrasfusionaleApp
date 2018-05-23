@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xfx;
 
 namespace TrasfusionaleApp.iOS
 {
@@ -22,6 +23,7 @@ namespace TrasfusionaleApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            XfxControls.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

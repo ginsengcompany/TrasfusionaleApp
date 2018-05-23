@@ -1,37 +1,163 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrasfusionaleApp.Views.IndividuaPazienteView">
+             x:Class="TrasfusionaleApp.Views.IndividuaPazienteView"
+             xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
+             Title="Individua Paziente" BackgroundColor="White"
+             >
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" Margin="10">
+            <Grid BackgroundColor="#5195DD" Padding="2" RowSpacing="0" ColumnSpacing="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition> <!-- 0 ENTRY-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 1 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 2 NOME-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 3 NOME-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 4 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 5 COGNOME-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 6 COGNOME-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 7 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 8 REPARTO-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 9 REPARTO-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 10 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 11 LETTO-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 12 LETTO-->
+                    <RowDefinition Height="0.2*"></RowDefinition> <!-- 13 S-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 14 ID-->
+                    <RowDefinition Height="*"></RowDefinition> <!-- 15 ID-->
+                </Grid.RowDefinitions>
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="0" Padding="3" Orientation="Horizontal">
+                    <model:CustomEntry x:Name="entryCodiceProvetta" Placeholder="Inserisci UID" IsCurvedCornersEnabled="True"
+                        VerticalOptions="Center" HorizontalOptions="CenterAndExpand" WidthRequest="250" BorderWidth="3"
+                        BorderColor="#5195DD" PlaceholderColor="Gray" TextColor="#5DACFF"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Grid.Column="1" Grid.Row="0" Padding="7" VerticalOptions="FillAndExpand">
+                    <Image 
+                    Source="codescan.png" HeightRequest="60">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="scan"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
 
-            <Label
-                Text="Codice provetta"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
-                Grid.Column="0" Grid.Row="0"/>
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195DD" Grid.Row="1" />
 
-            <Label
-                Text="Nome del paziente"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
-                Grid.Column="1" Grid.Row="0"/>
+                <StackLayout Grid.Column="0" BackgroundColor="White" Grid.Row="2" Grid.ColumnSpan="2">
+                    <Label
+                    Text="Nome del paziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Medium" />
+                </StackLayout>
 
-            <Label
-                Text="Cognome del paziente"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
-                Grid.Column="0" Grid.Row="1"/>
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelNomePaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5DACFF"
+                    />
+                </StackLayout>
 
-        </Grid>
+                <StackLayout BackgroundColor="#5195DD" Grid.ColumnSpan="2"  Grid.Row="4"/>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+                    <Label
+                    Text="Cognome del paziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelCognomePaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5DACFF"/>
+                </StackLayout>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195DD"  Grid.Row="7"/>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">
+                    <Label
+                    Text="Reparto"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                        />
+                </StackLayout>
+
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelRepartoPaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5DACFF"
+                    />
+                </StackLayout>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195DD"  Grid.Row="10"/>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2">
+                    <Label
+                    Text="Letto"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    />
+                </StackLayout>
+                
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelLettoPaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5DACFF"
+                        />
+                </StackLayout>
+
+                <StackLayout Grid.ColumnSpan="2" BackgroundColor="#5195DD"  Grid.Row="13"/>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="2">
+                    <Label
+                    Text="ID paziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    />
+                </StackLayout>
+
+                <StackLayout BackgroundColor="White" Grid.Column="0" Grid.Row="15" Grid.ColumnSpan="2">
+                    <Label
+                    x:Name="labelIdPaziente"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    FontSize="Large"
+                    TextColor="#5DACFF"
+                        />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

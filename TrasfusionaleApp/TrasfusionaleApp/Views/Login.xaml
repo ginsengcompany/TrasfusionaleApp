@@ -1,55 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrasfusionaleApp.Views.Login">
+             xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
+             x:Class="TrasfusionaleApp.Views.Login" 
+             Title="Login" 
+             NavigationPage.HasNavigationBar="False"
+            >
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Margin="10" Padding="0,0,0,20">
-            <StackLayout Orientation="Vertical" >
-                
-                <Grid HorizontalOptions="Center" Margin="0,40,15,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
-                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical"
+                     Margin="10"
+                     Padding="0,0,0,20">
 
-                    <!-- <Image Source="user_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" HeightRequest="50"/> -->
-                    <Entry
-                            Grid.Column="1" Grid.Row="0"
-                            x:Name="entryUsername"
-                            Placeholder="Inserisci UID"     
-                            WidthRequest="250"
-                            VerticalOptions="Center"/>
-                    <Image 
-                        Grid.Column="2" Grid.Row="0"
-                        Source="scan.png" >
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="AvviaScansione"></TapGestureRecognizer>
-                        </Image.GestureRecognizers>
-                    </Image>
+                <Image x:Name="logo"
+                    Source="logoCardarelli1.png"
+                       HorizontalOptions="Center"
+                       HeightRequest="120"
+                       Margin="10,30,10,30"/>
+                <Frame  BackgroundColor="#97BCE3" 
+                        CornerRadius="15"
+                        HasShadow="True"
+                        Margin="20,30,20,40">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label Text="LOGIN" 
+                               HorizontalOptions="CenterAndExpand" 
+                               HorizontalTextAlignment="Center" 
+                               FontSize="Large" 
+                               TextColor="White" 
+                               FontAttributes="Bold"/>
+                    <StackLayout Padding="10,0,10,0">
+
+
+                        <Grid HorizontalOptions="Center" >
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <model:CustomEntry CornerRadius="18" 
+                                          Grid.Row="0"
+                                          x:Name="entryUsername"
+                                          HeightRequest="50"
+                                          BorderWidth="3"
+                                          IsCurvedCornersEnabled="True"  
+                                          BorderColor="#5195DD"
+                                          VerticalOptions="Center"
+                                          HorizontalTextAlignment="Center"   
+                                          Placeholder="UID"  
+                                          PlaceholderColor="Gray"
+                                          TextColor="Black"  
+                                          FontAttributes="Bold">
+                            </model:CustomEntry>
+
+                            <Image 
+                           Grid.Row="0" 
+                           Margin="0,0,7,0"
+                           WidthRequest="35"
+                           HorizontalOptions="End"
+                           Source="codescan.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="scan"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </Grid>
+
+                    </StackLayout>
+
 
                     <!-- <Image Source="pass_login.png" VerticalOptions="Center" Grid.Column="0" Grid.Row="1" HeightRequest="50"/> -->
-                    <Entry
-                            Placeholder="Inserisci Password" 
-                        x:Name="entryPassword"
-                            Grid.Column="1" Grid.Row="1"
-                            VerticalOptions="Center"
-                            WidthRequest="250"/>
-                    <Image Source="eye.png" Grid.Row="1" Grid.Column="2"></Image>
-                    <Button
-                        Text="Login"
-                        Grid.Column="1" Grid.Row="2"
-                        VerticalOptions="Center"
-                        WidthRequest="250"
-                        Clicked="AvvioLogin"
-                        />
-                </Grid>
+                    <StackLayout Padding="10,0,10,0">
+                        <Grid HorizontalOptions="Center" 
+                         >
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <model:CustomEntry CornerRadius="18"
+                                       x:Name="entryPassword"
+                                       Grid.Row="0"
+                                       IsCurvedCornersEnabled="True"  
+                                       HeightRequest="50"
+                                       BorderWidth="3"
+                                       BorderColor="#5195DD"
+                                       IsPassword="True"
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Placeholder="PASSWORD"  
+                                       PlaceholderColor="Gray"  
+                                       TextColor="Black"  
+                                       FontAttributes="Bold">
+                            </model:CustomEntry>
+                            <Image Source="eye.png" 
+                           HorizontalOptions="End"
+                           Grid.Row="0"
+                           WidthRequest="40"
+                                   Margin="0,0,7,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="mostraPassword"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+
+                    <Image Source="android_normal1.png"
+                           Margin="20" 
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           WidthRequest="225"
+                    >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AvvioLogin"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                  
+                </Frame>
+
             </StackLayout>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

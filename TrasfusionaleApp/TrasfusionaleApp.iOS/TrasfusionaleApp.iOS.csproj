@@ -122,7 +122,13 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
+    <PackageReference Include="SocketIoClientDotNet">
+      <Version>1.0.5</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+    <PackageReference Include="Xfx.Controls">
+      <Version>1.1.3</Version>
+    </PackageReference>
     <PackageReference Include="ZXing.Net.Mobile">
       <Version>2.4.1</Version>
     </PackageReference>
@@ -216,5 +222,32 @@
     <ImageAsset Include="Assets.xcassets\scan.imageset\Icon@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoCardarelli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\provetta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sacca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\geo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\codescan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\android_normal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg_localizza_paziente.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg_pretrasfusionale.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg_trasfusione.jpeg" />
   </ItemGroup>
 </Project>

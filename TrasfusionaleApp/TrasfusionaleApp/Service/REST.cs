@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -138,6 +139,34 @@ namespace TrasfusionaleApp.Service
             try
             {
                 var result = await client.PostAsync(url, new StringContent(json.ToString(), Encoding.UTF8, ContentType));
+                var response = await result.Content.ReadAsStringAsync();
+                responseMessage = result.StatusCode;
+                warning = response;
+                var isValid = JToken.Parse(response);
+                Item = JsonConvert.DeserializeObject<T>(response);
+                return Item;
+            }
+            catch (Exception)
+            {
+
+            }
+            return default(T);
+        }
+
+        public async Task<T> PostFormUrlEncoded(string url, E dati)
+        {
+            T Item;
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(url, String.Empty));
+            var nvc = new List<KeyValuePair<string, string>>();
+            foreach (var prop in dati.GetType().GetProperties())
+            {
+                nvc.Add(new KeyValuePair<string, string>(prop.Name, prop.GetValue(dati).ToString()));
+            }
+            var values = new FormUrlEncodedContent(nvc);
+            try
+            {
+                var result = await client.PostAsync(url, values);
                 var response = await result.Content.ReadAsStringAsync();
                 responseMessage = result.StatusCode;
                 warning = response;

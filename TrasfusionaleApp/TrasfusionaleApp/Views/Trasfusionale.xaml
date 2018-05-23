@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrasfusionaleApp.Views.Trasfusionale"
+             xmlns:model="clr-namespace:TrasfusionaleApp.Model;assembly=TrasfusionaleApp"
+             Title="Trasfusionale"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="AnnullaOperazione"
+            Order="Primary"
+            Text="Annulla"
+            Clicked="toolbarAnnulla"
+            Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" Margin="10">
+            <model:CustomEntry 
+                CornerRadius="18" x:Name="entryPressioneArteriosa" TextColor="Black" FontAttributes="Bold" 
+                Placeholder="Inserire Pressione Arteriosa" PlaceholderColor="Gray" Unfocused="controlloCampiEntry"
+                Keyboard="Numeric" BorderColor="#5195DD" IsCurvedCornersEnabled="True" BorderWidth="3"/>
+
+            <model:CustomEntry
+                CornerRadius="18" x:Name="entryTemperatura" TextColor="Black" FontAttributes="Bold"
+                Placeholder="Inserire Temperatura corporea" PlaceholderColor="Gray" Unfocused="controlloCampiEntry"
+                Keyboard="Numeric" BorderColor="#5195DD" IsCurvedCornersEnabled="True" BorderWidth="3"/>
+
+            <model:CustomEntry
+                CornerRadius="18" x:Name="entryFrequenzaCardiaca" TextColor="Black" FontAttributes="Bold"
+                Placeholder="Inserire Frequenza cardiaca" PlaceholderColor="Gray" Unfocused="controlloCampiEntry"
+                Keyboard="Numeric" BorderColor="#5195DD" IsCurvedCornersEnabled="True" BorderWidth="3"/>
+            <Button
+                Text="Inizia trasfusione"
+                TextColor="White"
+                BackgroundColor="#5195dd"
+                BorderRadius="10"
+                x:Name="btnInizia"
+                IsEnabled="False"
+                Clicked="inizia" />
+            <Label
+                x:Name="labelNote"
+                Text="Note"
+                FontAttributes="Bold"
+                TextColor="Black"
+                FontSize="Medium"
+                IsVisible="False"
+                HorizontalOptions="CenterAndExpand"/>
+            <model:CustomEditor
+                x:Name="editorNote"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                TextColor="Black"
+                CornerRadius="18"
+                FontAttributes="Bold"
+                IsVisible="False"
+                BorderColor="#5195DD"
+                IsCurvedCornersEnabled="True"
+                BorderWidth="3"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
