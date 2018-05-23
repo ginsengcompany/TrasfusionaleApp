@@ -10,7 +10,7 @@ namespace TrasfusionaleApp.Model
     {
         public string uid { get; set; }
         public string uidPaziente { get; set; }
-        private readonly string datiSacca = "http://192.168.125.14:3000/sacche/datisacca";
+        private readonly string datiSacca = "http://192.168.125.24:3000/sacche/datisacca";
         public static readonly string eventSocketSacca = "uidsacca";
 
         public async Task<bool> InviaSacca()

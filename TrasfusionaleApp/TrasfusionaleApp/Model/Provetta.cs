@@ -10,8 +10,8 @@ namespace TrasfusionaleApp.Model
     {
         public string uid { get; set; }
         public string uidPaziente { get; set; }
-        private readonly string datiProvetta = "http://192.168.125.14:3000/provette/datiprovetta";
-        private readonly string datiPaziente = "http://192.168.125.14:3000/paziente/datiPaziente";
+        private readonly string datiProvetta = "http://192.168.125.24:3000/provette/datiprovetta";
+        private readonly string datiPaziente = "http://192.168.125.24:3000/paziente/datiPaziente";
         public async Task<bool> InviaProvetta()
         {
             REST<Provetta, Provetta> connessioneDatiProvetta = new REST<Provetta, Provetta>();

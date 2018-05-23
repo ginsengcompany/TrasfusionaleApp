@@ -14,9 +14,9 @@ namespace TrasfusionaleApp.Model
         public string tipoOperatore { get; set; }
         public int codice_operatore { get; set; }
         public string password { get; set; }
-        private readonly string restLogin = "http://192.168.125.14:3000/operatore/login";
-        private readonly string restMe = "http://192.168.125.14:3000/operatore/me";
-        private readonly string restLoginTrasfusionale = "http://192.168.125.14:3000/operatore/loginTrasfusione";
+        private readonly string restLogin = "http://192.168.125.24:3000/operatore/login";
+        private readonly string restMe = "http://192.168.125.24:3000/operatore/me";
+        private readonly string restLoginTrasfusionale = "http://192.168.125.24:3000/operatore/loginTrasfusione";
         public static readonly string eventSocketMedico = "uidmedico";
         public static readonly string eventSocketInfermiere = "uidinfermiere";
 

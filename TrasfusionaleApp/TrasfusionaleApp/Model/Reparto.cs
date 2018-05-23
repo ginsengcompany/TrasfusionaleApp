@@ -8,6 +8,6 @@ namespace TrasfusionaleApp.Model
     {
         public string id { get; set; }
         public string nomeReparto { get; set; }
-        public static readonly string restListaReparti = "http://192.168.125.14:3000/reparti/listareparti";
+        public static readonly string restListaReparti = "http://192.168.125.24:3000/reparti/listareparti";
     }
 }
