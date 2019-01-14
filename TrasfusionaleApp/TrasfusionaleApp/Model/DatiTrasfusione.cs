@@ -36,10 +36,10 @@ namespace TrasfusionaleApp.Model
         public string inizioTrasfusione { get; set; }
         public DatiSalute datiPrimaTrasfusione { get; set; }
         public DatiSalute datiDopoTrasfusione { get; set; }
-        private string restInvioDatiInizioTrasfusione = "http://192.168.125.24:3000/trasfusioni/inserisciTrasfusione";
-        public static readonly string restListTrasfusioniForReparto = "http://192.168.125.24:3000/trasfusioni/listaPerReparto";
-        private string restInvioDatiFineTrasfusione = "http://192.168.125.24:3000/trasfusioni/aggiornamentoDopoLaTrasfusione";
-        public static readonly string restFineTrasfusione = "http://192.168.125.24:3000/trasfusioni/fineTrasfusione";
+        private string restInvioDatiInizioTrasfusione = "http://192.168.125.31:3000/trasfusioni/inserisciTrasfusione";
+        public static readonly string restListTrasfusioniForReparto = "http://192.168.125.31:3000/trasfusioni/listaPerReparto";
+        private string restInvioDatiFineTrasfusione = "http://192.168.125.31:3000/trasfusioni/aggiornamentoDopoLaTrasfusione";
+        public static readonly string restFineTrasfusione = "http://192.168.125.31:3000/trasfusioni/fineTrasfusione";
 
 
         public DatiTrasfusione()

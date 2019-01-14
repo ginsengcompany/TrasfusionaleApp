@@ -75,7 +75,7 @@ namespace TrasfusionaleApp.Views
             public ModelloHcs modello_infermiere { get; set; }
             public Operatore infermiere { get; set; }
             public Operatore medico { get; set; }
-            private readonly string restInvioModelliCompilati = "http://192.168.125.24:3000/modelloH/controllomodellicompilati";
+            private readonly string restInvioModelliCompilati = "http://192.168.125.31:3000/modelloH/controllomodellicompilati";
 
             public InvioModelliCompilati() { }
             public InvioModelliCompilati(ModelloHcs modelloInf, ModelloHcs modelloMed, Operatore infermiere, Operatore medico)
