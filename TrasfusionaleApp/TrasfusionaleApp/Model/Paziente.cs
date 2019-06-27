@@ -20,7 +20,7 @@ namespace TrasfusionaleApp.Model
         public string reparto { get; set; }
         public int letto { get; set; }
         public string dataAssegnazioneTrasfusione { get; set; }
-        private readonly string datiPaziente = "http://192.168.125.31:3000/paziente/datiPaziente";
+        private readonly string datiPaziente = "http://192.168.125.97:3000/paziente/datiPaziente";
 
         public async Task<bool> prelevaDatiPaziente()
         {
